@@ -1,11 +1,12 @@
 # How to Learn Ruby on Rails
 
+* Installation
+  * [Official Ruby site instructions](https://www.ruby-lang.org/en/installation/)
+  * [Rails Installer](http://railsinstaller.org)
+  * [CUNY instructions](https://github.com/cuny-nytech/syllabus/blob/master/docs/setup.md) (would like to point to this guide eventually)
+* Command-line basics
 * Ruby
   * Concepts
-    * Installation
-      * [Official Ruby site instructions](https://www.ruby-lang.org/en/installation/)
-      * [Rails Installer](http://railsinstaller.org)
-      * [CUNY instructions](https://github.com/cuny-nytech/syllabus/blob/master/docs/setup.md) (would like to point to this guide eventually)
     * Programming fundamentals
     * Printing
     * Gems
@@ -22,7 +23,7 @@
     * [Codecademy](http://www.codecademy.com/tracks/ruby)
 * Rails
   * Concepts
-    * Just a bunch of Ruby files
+    * Rails is just a bunch of Ruby files
     * Routing
     * Helpers
     * Controller actions
