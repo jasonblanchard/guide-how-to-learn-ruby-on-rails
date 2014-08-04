@@ -1,11 +1,6 @@
 # How to Learn Ruby on Rails
 
 * Ruby
-  * Resources
-    * [Try Ruby](https://www.codeschool.com/courses/try-ruby)
-    * [Ruby Bits](https://www.codeschool.com/courses/ruby-bits)
-    * [Programming Ruby (the "Pickaxe" book)](http://pragprog.com/book/ruby/programming-ruby)
-    * [Codecademy](http://www.codecademy.com/tracks/ruby)
   * Concepts
     * Installation
       * [Official Ruby site instructions](https://www.ruby-lang.org/en/installation/)
@@ -20,12 +15,12 @@
     * [Pry](http://pryrepl.org)
       * Not worth the possible confusion?
     * Debugging
-* Rails
   * Resources
-    * [The Hartl Rails Tutorial](http://www.railstutorial.org)
-    * [The Rails 4 Way](https://leanpub.com/tr4w)
-    * [Agile Web Development with Rails 4](http://pragprog.com/book/rails4/agile-web-development-with-rails-4)
-    * [Rails for Zombies](http://railsforzombies.org)
+    * [Try Ruby](https://www.codeschool.com/courses/try-ruby)
+    * [Ruby Bits](https://www.codeschool.com/courses/ruby-bits)
+    * [Programming Ruby (the "Pickaxe" book)](http://pragprog.com/book/ruby/programming-ruby)
+    * [Codecademy](http://www.codecademy.com/tracks/ruby)
+* Rails
   * Concepts
     * Just a bunch of Ruby files
     * Routing
@@ -46,3 +41,8 @@
       * Not putting sensitive information (e.g. keys) in repository
       * Limiting access to resources
     * Asset pipeline
+  * Resources
+    * [The Hartl Rails Tutorial](http://www.railstutorial.org)
+    * [The Rails 4 Way](https://leanpub.com/tr4w)
+    * [Agile Web Development with Rails 4](http://pragprog.com/book/rails4/agile-web-development-with-rails-4)
+    * [Rails for Zombies](http://railsforzombies.org)
