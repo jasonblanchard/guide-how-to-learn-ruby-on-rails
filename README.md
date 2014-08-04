@@ -7,6 +7,8 @@
   * [Official Ruby site instructions](https://www.ruby-lang.org/en/installation/)
   * [CUNY instructions](https://github.com/cuny-nytech/syllabus/blob/master/docs/setup.md) (would like to point to this guide eventually)
 * Command-line basics
+  * Resources
+    * [The Command Line Crash Course](http://cli.learncodethehardway.org/book/)
 * Ruby
   * Concepts
     * REPL
