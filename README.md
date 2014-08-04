@@ -1,8 +1,10 @@
 # How to Learn Ruby on Rails
 
 * Installation
+  * For Windows users:
+    * [Run a VM](https://github.com/cuny-nytech/syllabus/blob/master/docs/setup.md#windows)
+    * [Rails Installer](http://railsinstaller.org)
   * [Official Ruby site instructions](https://www.ruby-lang.org/en/installation/)
-  * [Rails Installer](http://railsinstaller.org)
   * [CUNY instructions](https://github.com/cuny-nytech/syllabus/blob/master/docs/setup.md) (would like to point to this guide eventually)
 * Command-line basics
 * Ruby
