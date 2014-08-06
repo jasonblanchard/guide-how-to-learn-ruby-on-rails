@@ -4,12 +4,7 @@
   * Rails is just a bunch of Ruby files
   * What's a server
     * Server<–>browser relationship
-* Installation
-  * For Windows users:
-    * [Run a VM](https://github.com/cuny-nytech/syllabus/blob/master/docs/setup.md#windows)
-    * [Rails Installer](http://railsinstaller.org)
-  * [Official Ruby site instructions](https://www.ruby-lang.org/en/installation/)
-  * [CUNY instructions](https://github.com/cuny-nytech/syllabus/blob/master/docs/setup.md) (would like to point to this guide eventually)
+* [Installation](http://installrails.com)
 * Ruby
   * Concepts
     * REPL
