@@ -1,5 +1,9 @@
 # How to Learn Ruby on Rails
 
+* Overview
+  * Rails is just a bunch of Ruby files
+  * What's a server
+    * Server<–>browser relationship
 * Installation
   * For Windows users:
     * [Run a VM](https://github.com/cuny-nytech/syllabus/blob/master/docs/setup.md#windows)
@@ -24,7 +28,6 @@
     * [Codecademy](http://www.codecademy.com/tracks/ruby)
 * Rails
   * Concepts
-    * Rails is just a bunch of Ruby files
     * Routing
     * Helpers
     * Templating
