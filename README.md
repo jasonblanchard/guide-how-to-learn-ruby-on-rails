@@ -24,8 +24,9 @@ Through your instructions in Ruby, Rails will take information stored in a datab
 
 ## Installation
 
-* Resources
-  * [Install Rails](http://installrails.com)
+The first rite of passage of programming is getting the necessary tools installed.  Thankfully, there is a handy guide that describes how to do just that.
+
+[Install Rails](http://installrails.com)
 
 ## Ruby
 
