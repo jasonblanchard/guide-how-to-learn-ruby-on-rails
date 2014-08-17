@@ -81,10 +81,12 @@ Additional resources:
   * [better_errors](https://github.com/charliesome/better_errors)
 * Asset pipeline
 * Bundler
-* Deployment
-  * [Heroku](https://devcenter.heroku.com/articles/getting-started-with-rails4)
 * Authentication
   * OAuth
 * Basic security
   * Not putting sensitive information (e.g. keys) in repository
   * Limiting access to resources
+
+## Deployment
+
+Now that you've been led through building a basic Rails application, it's time to get it up in front of people.  When building an application, you will generally run it on your local machine, but for others to access the app, you need to **deploy** to a **server**.  The easiest and most popular option for hosting (new) Rails applications is [Heroku](https://www.heroku.com).  With some other providers, you need to set up the server, database, and other parts of the system, but with Heroku it can be as simple as running a few commands.  Follow [this guide](https://devcenter.heroku.com/articles/getting-started-with-rails4) to get your app live.
