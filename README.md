@@ -61,11 +61,6 @@ Welcome back!  Feel like you're ready to strike out on your own?  We didn't thin
 
 [Rails for Zombies](http://railsforzombies.org)
 
-Additional resources:
-
-* [Agile Web Development with Rails 4](http://pragprog.com/book/rails4/agile-web-development-with-rails-4)
-* [The Rails 4 Way](https://leanpub.com/tr4w)
-
 ### Concepts
 
 * Routing
@@ -90,3 +85,20 @@ Additional resources:
 ## Deployment
 
 Now that you've been led through building a basic Rails application, it's time to get it up in front of people.  When building an application, you will generally run it on your local machine, but for others to access the app, you need to **deploy** to a **server**.  The easiest and most popular option for hosting (new) Rails applications is [Heroku](https://www.heroku.com).  With some other providers, you need to set up the server, database, and other parts of the system, but with Heroku it can be as simple as running a few commands.  Follow [this guide](https://devcenter.heroku.com/articles/getting-started-with-rails4) to get your app live.
+
+## Going deeper
+
+Congratulations!  You now understand all the fundamentals of building a web application in Rails.  There are many *many* options of what to learn next, and it's [turtles all the way down](http://en.wikipedia.org/wiki/Turtles_all_the_way_down).  Options include:
+
+* SQL
+* Front-end development
+  * HTML/CSS
+  * JavaScript (fundamentals, or a framework)
+* More practice of programming fundamentals (algorithms, design patterns, etc.)
+* Deeper understanding of Ruby
+* Deeper understanding of Rails – see:
+  * [Agile Web Development with Rails 4](http://pragprog.com/book/rails4/agile-web-development-with-rails-4)
+  * [The Rails 4 Way](https://leanpub.com/tr4w)
+* Working with APIs
+
+There isn't a right (or wrong) choice, because their relative value will depend on your short and long-term goals.  Godspeed!
