@@ -40,17 +40,6 @@ Additional resources:
 * [Codecademy](http://www.codecademy.com/tracks/ruby)
 * [Programming Ruby (the "Pickaxe" book)](http://pragprog.com/book/ruby/programming-ruby)
 
-### Concepts
-
-* REPL
-  * IRB
-* Programming fundamentals
-* How to run scripts
-* Gems
-* `require`
-* Debugging
-  * `puts`  
-
 ## Rails
 
 Now that you have the basics down, you are ready for the main course: Rails!  The Rails Tutorial will walk you through getting your first app up and running:
@@ -60,27 +49,6 @@ Now that you have the basics down, you are ready for the main course: Rails!  Th
 Welcome back!  Feel like you're ready to strike out on your own?  We didn't think so.  There are a *lot* of pieces to understand when building web applications, and chances are it was a bit of a blur the first time the concepts were introduced.  One piece of advice (c/o [Mattan Griffel](http://www.slideshare.net/mattangriffel/how-to-teach-yourself-to-code/70)): as soon as you get through one introduction to Rails, do another one.  Rais for Zombies (fun, right?) will cover things that The Rails Tutorial (or any other resource) missed, and vice versa.  Even where they overlap, hearing the same thing explained two different ways will make it clearer.  Also, you will feel super awesome for already knowing a lot of it.  So, go ahead, and we'll see you back here soon.
 
 [Rails for Zombies](http://railsforzombies.org)
-
-### Concepts
-
-* Routing
-* Helpers
-* Templating
-* Controller actions
-* Controller filters
-* ActiveRecord->SQL
-* Debugging
-  * Rails console
-  * Server log
-  * Database exploration tools
-  * [better_errors](https://github.com/charliesome/better_errors)
-* Asset pipeline
-* Bundler
-* Authentication
-  * OAuth
-* Basic security
-  * Not putting sensitive information (e.g. keys) in repository
-  * Limiting access to resources
 
 ## Deployment
 
