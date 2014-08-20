@@ -49,7 +49,17 @@ If you run into problems where you're not sure the state that your program is in
 
 ## Rails
 
-Now that you have the basics down, you are ready for the main course: Rails!  [**Gems**](http://guides.rubygems.org) are reusable plugins that are published by the community, the most popular of which is Rails.  The Rails Tutorial will walk you through getting your first app up and running:
+Now that you have the basics down, you are ready for the main course: Rails!  [**Gems**](http://guides.rubygems.org) are reusable plugins that are published by the community, the most popular of which is Rails.  Rails itself is made up of many smaller gems.
+
+There are a few major pieces of Rails that you will need to know about.  **Models** are what deal with data in your application – they handle passing data to and from the **database** using **SQL**.  Models in Rails are built as gem called **ActiveRecord**.
+
+**Views** are the part of Rails that generate HTML to be sent back to the browser.  In Rails, you use **ERB templates** to insert Ruby code into HTML files, so that you can generate pages depending on what record the user is viewing, whether they're logged in or not, etc.  **Helpers** are methods that can be used within your views, whether provided by Rails or written by you.
+
+When you visit a Rails website, the request comes in through the **router**, which determines which **controller action** to send it to.  The controller then gathers up the models it needs, and **renders** the appropriate view.
+
+The page may need JavaScript, CSS, images, fonts, etc. in order to load, which Rails serves through the **asset pipeline**.  
+
+The Rails Tutorial will talk through these pieces in more detail, and walk you through getting your first app up and running:
 
 [The Rails Tutorial](http://www.railstutorial.org)
 
