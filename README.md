@@ -30,19 +30,26 @@ The first rite of passage of programming is getting the necessary tools installe
 
 ## Ruby
 
-It's really tough to have a conversation if you don't speak the language, so Ruby is the next step on the way to building your first app.  Give these resources a try:
+It's really tough to have a conversation if you don't speak the language, so Ruby is the next step on the way to building your first app.  Like most programming languages, Ruby is written in **source code** files as text, which is then run one of two ways:
+
+* Interactively through the **REPL** (Read-Evaluate-Print Loop), which in Ruby is called **IRB**
+* Run as **scripts**, i.e. `ruby file.rb`
+
+Give these resources a try to learn the basics of programming in Ruby:
 
 1. [Try Ruby](https://www.codeschool.com/courses/try-ruby)
 1. [Ruby Bits](https://www.codeschool.com/courses/ruby-bits)
 
-Additional resources:
+If you run into problems where you're not sure the state that your program is in, just remember: `puts` is your friend.  If you aren't sure what the value of a variable is at a certain line, just print it out to your console.
+
+### Additional resources
 
 * [Codecademy](http://www.codecademy.com/tracks/ruby)
 * [Programming Ruby (the "Pickaxe" book)](http://pragprog.com/book/ruby/programming-ruby)
 
 ## Rails
 
-Now that you have the basics down, you are ready for the main course: Rails!  The Rails Tutorial will walk you through getting your first app up and running:
+Now that you have the basics down, you are ready for the main course: Rails!  [**Gems**](http://guides.rubygems.org) are reusable plugins that are published by the community, the most popular of which is Rails.  The Rails Tutorial will walk you through getting your first app up and running:
 
 [The Rails Tutorial](http://www.railstutorial.org)
 
