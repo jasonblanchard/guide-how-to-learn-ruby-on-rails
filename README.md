@@ -57,23 +57,62 @@ If you run into problems where you're not sure the state that your program is in
 
 Now that you have the basics down, you are ready for the main course: Rails!  [**Gems**](http://guides.rubygems.org) are reusable plugins that are published by the community, the most popular of which is Rails.  Rails itself is made up of many smaller gems.
 
-There are a few major pieces of Rails that you will need to know about.  **Models** are what deal with data in your application – they handle passing data to and from the **database** using **SQL**.  Models in Rails are built as gem called **ActiveRecord**.
+As an example project, let's build a super simple classifieds site, where we can create and view individual listings.  We have a completed version available [here](https://github.com/Thinkful/thinklist/) if you ever get lost.
+
+### Boilerplate
+
+First, pick a **directory** (a.k.a. folder) where you want to put your code (you can move it later if you want).  Just as an example, let's create a `dev/` directory under our user folder:
+
+```bash
+$ mkdir ~/dev
+$ cd ~/dev
+```
+
+**mkdir** creates the new folder under the home directory (which is what `~` refers to) – **cd** stands for "change directory", which takes us to that new spot.
+
+Since we already have the Rails gem [installed](#installation), the next step is to generate a **boilerplate** application called "thinklist".  Run:
+
+```bash
+$ rails new thinklist
+$ cd thinklist
+$ open .
+```
+
+You will now see a bunch of folders and files – this is the skeleton of your Rails app.  To fire it up, run
+
+```bash
+$ rails server
+```
+
+and open http://localhost:3000/ in your browser.  You should see something like this:
+
+![boilerplate](assets/boilerplate.png)
+
+This means our **local** Rails **server** is successfully running on our computer.  Now let's look at the different pieces.
+
+### Models
+
+**Models** are what deal with data in your application – they handle passing data to and from the **database** using **SQL**.  Think of a database as a bunch of interconnected spreadsheets, where each spreadsheet is called a **table**.  Models in Rails are built as gem called **ActiveRecord**.
+
+### Views
 
 **Views** are the part of Rails that generate HTML to be sent back to the browser.  In Rails, you use **ERB templates** to insert Ruby code into HTML files, so that you can generate pages depending on what record the user is viewing, whether they're logged in or not, etc.  **Helpers** are methods that can be used within your views, whether provided by Rails or written by you.
 
+### Controllers
+
 When you visit a Rails website, the request comes in through the **router**, which determines which **controller action** to send it to.  The controller then gathers up the models it needs, and **renders** the appropriate view.
+
+### Assets
 
 The page may need JavaScript, CSS, images, fonts, etc. in order to load, which Rails serves through the **asset pipeline**.
 
 You will add **gem dependencies** to your app over time, which can be a pain to manage if you're adding each of them via `gem install`.  Rails uses a tool called [**Bundler**](http://bundler.io) to list the specific versions of gems that are required for an app, so installing all of them is as simple as running `bundle`.
 
-The Rails Tutorial will talk through these pieces in more detail, and walk you through getting your first app up and running:
+### More Rails
+
+Feel like you're ready to strike out on your own?  We didn't think so.  There are a *lot* of pieces to understand when building web applications, and chances are it was a bit of a blur the first time the concepts were introduced.  One piece of advice (c/o [Mattan Griffel](http://www.slideshare.net/mattangriffel/how-to-teach-yourself-to-code/70)): as soon as you get through one introduction to Rails, do another one.  The Rails Tutorial will focus on some additional topics, but even where they overlap, hearing the same thing explained two different ways will make it clearer.  Also, you will feel super awesome for already knowing a lot of it.  So, go ahead, and we'll see you back here soon.
 
 [The Rails Tutorial](http://www.railstutorial.org)
-
-Welcome back!  Feel like you're ready to strike out on your own?  We didn't think so.  There are a *lot* of pieces to understand when building web applications, and chances are it was a bit of a blur the first time the concepts were introduced.  One piece of advice (c/o [Mattan Griffel](http://www.slideshare.net/mattangriffel/how-to-teach-yourself-to-code/70)): as soon as you get through one introduction to Rails, do another one.  Rais for Zombies (fun, right?) will cover things that The Rails Tutorial (or any other resource) missed, and vice versa.  Even where they overlap, hearing the same thing explained two different ways will make it clearer.  Also, you will feel super awesome for already knowing a lot of it.  So, go ahead, and we'll see you back here soon.
-
-[Rails for Zombies](http://railsforzombies.org)
 
 ## Deployment
 
@@ -96,6 +135,7 @@ Congratulations!  You now understand all the fundamentals of building a web appl
 * More practice of programming fundamentals (algorithms, design patterns, etc.)
 * Deeper understanding of Ruby
 * Deeper understanding of Rails – see:
+  * [Rails for Zombies](http://railsforzombies.org)
   * [Agile Web Development with Rails 4](http://pragprog.com/book/rails4/agile-web-development-with-rails-4)
   * [The Rails 4 Way](https://leanpub.com/tr4w)
 * Working with APIs
