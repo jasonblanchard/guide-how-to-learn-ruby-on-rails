@@ -57,7 +57,7 @@ If you run into problems where you're not sure the state that your program is in
 
 Now that you have the basics down, you are ready for the main course: Rails!  [**Gems**](http://guides.rubygems.org) are reusable plugins that are published by the community, the most popular of which is Rails.  Rails itself is made up of many smaller gems.
 
-As an example project, let's build a super simple classifieds site, where we can create and view individual listings.  We have a completed version available [here](https://github.com/Thinkful/thinklist/) if you ever get lost.
+As an example project, let's build a super simple classifieds site, where we can create and view individual listings.  We have a completed version available [here](https://github.com/Thinkful/thinklist/), and will include links to the code as it should appear after each step, in case you get lost.
 
 ### Boilerplate
 
@@ -77,6 +77,9 @@ $ bin/rails new thinklist
 $ cd thinklist
 $ open .
 ```
+
+* [Code](https://github.com/Thinkful/thinklist/tree/boilerplate)
+* [Diff](https://github.com/Thinkful/thinklist/commit/c64b7ede55418bcf8e109a3162d35bed3ce8d633)
 
 You will now see a bunch of folders and files – this is the skeleton of your Rails app.  To fire it up, run
 
