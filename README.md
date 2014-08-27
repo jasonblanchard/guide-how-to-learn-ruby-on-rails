@@ -39,7 +39,7 @@ It's really tough to have a conversation if you don't speak the language, so Rub
     $ ruby file.rb
     ```
 
-One convention to note: when commands are shown with a `$` preceding them (like above), that means they are meant to be run at the command line.
+One convention to note: lines that start with a `$` (like above) means they are commands, intended to be run at the command line.  Lines that start with `#` are comments, just there as helpful info.
 
 Give these resources a try to learn the basics of programming in Ruby:
 
