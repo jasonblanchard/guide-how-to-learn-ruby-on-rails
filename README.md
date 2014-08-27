@@ -69,11 +69,12 @@ in case you get lost.
 First, pick a **directory** (a.k.a. folder) where you want to put your code (you can move it later if you want).  Just as an example, let's create a `dev/` directory under our user folder:
 
 ```bash
+# "make directory"
 $ mkdir ~/dev
+# "change directory", which takes us to the new folder
+# "~" refers to your home directory
 $ cd ~/dev
 ```
-
-**mkdir** creates the new folder under the home directory (which is what `~` refers to) – **cd** stands for "change directory", which takes us to that new spot.
 
 Since we already have the Rails gem [installed](#installation), the next step is to generate a **boilerplate** application called "thinklist".  Run:
 
