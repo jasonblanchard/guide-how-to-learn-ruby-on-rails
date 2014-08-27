@@ -119,6 +119,19 @@ This has generated a few things for us:
 * A model for the listings – see [`app/models/listing.rb`](https://github.com/Thinkful/thinklist/blob/model/app/models/listing.rb).  Models in Rails are built on top of a gem called **ActiveRecord**, so you will notice that your `Listing` model **inherits** from [`ActiveModel::Base`](http://api.rubyonrails.org/classes/ActiveRecord/Base.html).
 * A couple of files for testing your model under `test/` (don't worry about those right now)
 
+### Migration
+
+Though the migration file has been generated, we now need to run it in order for the change to be applied.  [**Rake**](https://github.com/jimweirich/rake) is another gem that lots of Rails-related commands are run through.
+
+```bash
+$ bin/rake db:migrate
+```
+
+This generates a [`db/schema.rb`](https://github.com/Thinkful/thinklist/blob/migrate/db/schema.rb) file, which describes the current structure of your database.
+
+* [Code](https://github.com/Thinkful/thinklist/tree/migrate)
+* [Diff](https://github.com/Thinkful/thinklist/compare/model...migrate)
+
 ### Views
 
 **Views** are the part of Rails that generate HTML to be sent back to the browser.  In Rails, you use **ERB templates** to insert Ruby code into HTML files, so that you can generate pages depending on what record the user is viewing, whether they're logged in or not, etc.  **Helpers** are methods that can be used within your views, whether provided by Rails or written by you.
