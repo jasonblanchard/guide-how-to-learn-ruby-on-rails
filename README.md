@@ -73,7 +73,7 @@ $ cd ~/dev
 Since we already have the Rails gem [installed](#installation), the next step is to generate a **boilerplate** application called "thinklist".  Run:
 
 ```bash
-$ rails new thinklist
+$ bin/rails new thinklist
 $ cd thinklist
 $ open .
 ```
@@ -81,7 +81,7 @@ $ open .
 You will now see a bunch of folders and files – this is the skeleton of your Rails app.  To fire it up, run
 
 ```bash
-$ rails server
+$ bin/rails server
 ```
 
 and open http://localhost:3000/ in your browser.  You should see something like this:
