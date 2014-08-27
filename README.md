@@ -57,7 +57,12 @@ If you run into problems where you're not sure the state that your program is in
 
 Now that you have the basics down, you are ready for the main course: Rails!  [**Gems**](http://guides.rubygems.org) are reusable plugins that are published by the community, the most popular of which is Rails.  Rails itself is made up of many smaller gems.
 
-As an example project, let's build a super simple classifieds site, where we can create and view individual listings.  We have a completed version available [here](https://github.com/Thinkful/thinklist/), and will include links to the code as it should appear after each step, in case you get lost.
+As an example project, let's build a super simple classifieds site, where we can create and view individual listings.  We have a completed version available [here](https://github.com/Thinkful/thinklist/), and after each step will include:
+
+* A link to the code as it should appear
+* A link to the "diff" showing what changed
+
+in case you get lost.
 
 ### Boilerplate
 
