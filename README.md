@@ -102,7 +102,21 @@ Note: some other Rails tutorials introduce **scaffolding** (via [`rails generate
 
 ### Models
 
-**Models** are what deal with data in your application – they handle passing data to and from the **database** using **SQL**.  Think of a database as a bunch of interconnected spreadsheets, where each spreadsheet is called a **table**.  Models in Rails are built as gem called **ActiveRecord**.
+**Models** are what deal with data in your application – they handle passing data to and from the **database**.  Think of a database as a bunch of interconnected spreadsheets, called **tables**.  Each type of thing (users, products, etc.) will have it's own table and corresponding model, so let's start with creating them for Listings.
+
+```bash
+# generate model+table called "Listing" with a bunch of columns and corresponding types
+$ bin/rails generate model Listing title:string description:text price:decimal
+```
+
+* [Code](https://github.com/Thinkful/thinklist/tree/model)
+* [Diff](https://github.com/Thinkful/thinklist/compare/boilerplate...model)
+
+This has generated a few things for us:
+
+* A [**migration**](http://guides.rubyonrails.org/migrations.html), which contains instructions for changes to the structure of the database – see [`db/migrate/XXXX_create_listings.rb`](https://github.com/Thinkful/thinklist/blob/model/db/migrate/20140827203355_create_listings.rb)
+* A model for the listings – see [`app/models/listing.rb`](https://github.com/Thinkful/thinklist/blob/model/app/models/listing.rb).  Models in Rails are built on top of a gem called **ActiveRecord**, so you will notice that your `Listing` model **inherits** from [`ActiveModel::Base`](http://api.rubyonrails.org/classes/ActiveRecord/Base.html).
+* A couple of files for testing your model under `test/` (don't worry about those right now)
 
 ### Views
 
