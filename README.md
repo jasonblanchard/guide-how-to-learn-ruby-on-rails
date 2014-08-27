@@ -93,6 +93,8 @@ and open http://localhost:3000/ in your browser.  You should see something like 
 
 This means our **local** Rails **server** is successfully running on our computer.  Now let's look at the different pieces.
 
+Note: some other Rails tutorials introduce **scaffolding** (via [`rails generate scaffold`](http://guides.rubyonrails.org/command_line.html#rails-generate)) to automatically write starter code for you, but we are going to take the manual approach for the sake of better understanding.  You'll thank us later.
+
 ### Models
 
 **Models** are what deal with data in your application – they handle passing data to and from the **database** using **SQL**.  Think of a database as a bunch of interconnected spreadsheets, where each spreadsheet is called a **table**.  Models in Rails are built as gem called **ActiveRecord**.
