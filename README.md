@@ -33,7 +33,13 @@ The first rite of passage of programming is getting the necessary tools installe
 It's really tough to have a conversation if you don't speak the language, so Ruby is the next step on the way to building your first app.  Like most programming languages, Ruby is written in **source code** files as text, which is then run one of two ways:
 
 * Interactively through the **REPL** (Read-Evaluate-Print Loop), which in Ruby is called **IRB**
-* Run as **scripts**, i.e. `ruby file.rb`
+* Run as **scripts**, i.e.
+
+    ```bash
+    $ ruby file.rb
+    ```
+
+One convention to note: when commands are shown with a `$` preceding them (like above), that means they are meant to be run at the command line.
 
 Give these resources a try to learn the basics of programming in Ruby:
 
