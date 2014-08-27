@@ -30,30 +30,38 @@ The first rite of passage of programming is getting the necessary tools installe
 
 ## Ruby
 
-It's really tough to have a conversation if you don't speak the language, so Ruby is the next step on the way to building your first app.  Give these resources a try:
+It's really tough to have a conversation if you don't speak the language, so Ruby is the next step on the way to building your first app.  Like most programming languages, Ruby is written in **source code** files as text, which is then run one of two ways:
+
+* Interactively through the **REPL** (Read-Evaluate-Print Loop), which in Ruby is called **IRB**
+* Run as **scripts**, i.e. `ruby file.rb`
+
+Give these resources a try to learn the basics of programming in Ruby:
 
 1. [Try Ruby](https://www.codeschool.com/courses/try-ruby)
 1. [Ruby Bits](https://www.codeschool.com/courses/ruby-bits)
 
-Additional resources:
+If you run into problems where you're not sure the state that your program is in, just remember: `puts` is your friend.  If you aren't sure what the value of a variable is at a certain line, just print it out to your console.
+
+### Additional resources
 
 * [Codecademy](http://www.codecademy.com/tracks/ruby)
 * [Programming Ruby (the "Pickaxe" book)](http://pragprog.com/book/ruby/programming-ruby)
 
-### Concepts
-
-* REPL
-  * IRB
-* Programming fundamentals
-* How to run scripts
-* Gems
-* `require`
-* Debugging
-  * `puts`  
-
 ## Rails
 
-Now that you have the basics down, you are ready for the main course: Rails!  The Rails Tutorial will walk you through getting your first app up and running:
+Now that you have the basics down, you are ready for the main course: Rails!  [**Gems**](http://guides.rubygems.org) are reusable plugins that are published by the community, the most popular of which is Rails.  Rails itself is made up of many smaller gems.
+
+There are a few major pieces of Rails that you will need to know about.  **Models** are what deal with data in your application – they handle passing data to and from the **database** using **SQL**.  Models in Rails are built as gem called **ActiveRecord**.
+
+**Views** are the part of Rails that generate HTML to be sent back to the browser.  In Rails, you use **ERB templates** to insert Ruby code into HTML files, so that you can generate pages depending on what record the user is viewing, whether they're logged in or not, etc.  **Helpers** are methods that can be used within your views, whether provided by Rails or written by you.
+
+When you visit a Rails website, the request comes in through the **router**, which determines which **controller action** to send it to.  The controller then gathers up the models it needs, and **renders** the appropriate view.
+
+The page may need JavaScript, CSS, images, fonts, etc. in order to load, which Rails serves through the **asset pipeline**.
+
+You will add **gem dependencies** to your app over time, which can be a pain to manage if you're adding each of them via `gem install`.  Rails uses a tool called [**Bundler**](http://bundler.io) to list the specific versions of gems that are required for an app, so installing all of them is as simple as running `bundle`.
+
+The Rails Tutorial will talk through these pieces in more detail, and walk you through getting your first app up and running:
 
 [The Rails Tutorial](http://www.railstutorial.org)
 
@@ -61,30 +69,29 @@ Welcome back!  Feel like you're ready to strike out on your own?  We didn't thin
 
 [Rails for Zombies](http://railsforzombies.org)
 
-Additional resources:
+## Deployment
 
-* [Agile Web Development with Rails 4](http://pragprog.com/book/rails4/agile-web-development-with-rails-4)
-* [The Rails 4 Way](https://leanpub.com/tr4w)
+Now that you've been led through building a basic Rails application, it's time to get it up in front of people.  When building an application, you will generally run it on your local machine, but for others to access the app, you need to **deploy** to a **server**.  The easiest and most popular option for hosting (new) Rails applications is [Heroku](https://www.heroku.com).  With some other providers, you need to set up the server, database, and other parts of the system, but with Heroku it can be as simple as running a few commands.  Follow [this guide](https://devcenter.heroku.com/articles/getting-started-with-rails4) to get your app live.
 
-### Concepts
+## Security
 
-* Routing
-* Helpers
-* Templating
-* Controller actions
-* Controller filters
-* ActiveRecord->SQL
-* Debugging
-  * Rails console
-  * Server log
-  * Database exploration tools
-  * [better_errors](https://github.com/charliesome/better_errors)
-* Asset pipeline
-* Bundler
-* Deployment
-  * [Heroku](https://devcenter.heroku.com/articles/getting-started-with-rails4)
-* Authentication
-  * OAuth
-* Basic security
-  * Not putting sensitive information (e.g. keys) in repository
-  * Limiting access to resources
+Your Rails application will likely have users, who will need to **authenticate** to your application.  This can happen via a simple username and password, or by doing **single-sign on** via Twitter, Facebook, etc.  Most authentication with 3rd-party services work through a process called [**OAuth**](http://oauth.net), though you'll generally use [an existing library](http://marcanguera.net/awesome-ruby/#awesome-ruby-authentication) to handle this for you.
+
+Logged-in users might be able to do certain things that logged-out users can't, and an administrator might be able to see something that other users can't... this is called **authorization**.
+
+## Going deeper
+
+Congratulations!  You now understand all the fundamentals of building a web application in Rails.  There are many *many* options of what to learn next, and it's [turtles all the way down](http://en.wikipedia.org/wiki/Turtles_all_the_way_down).  Options include:
+
+* SQL
+* Front-end development
+  * HTML/CSS
+  * JavaScript (fundamentals, or a framework)
+* More practice of programming fundamentals (algorithms, design patterns, etc.)
+* Deeper understanding of Ruby
+* Deeper understanding of Rails – see:
+  * [Agile Web Development with Rails 4](http://pragprog.com/book/rails4/agile-web-development-with-rails-4)
+  * [The Rails 4 Way](https://leanpub.com/tr4w)
+* Working with APIs
+
+There isn't a right (or wrong) choice, because their relative value will depend on your short and long-term goals.  Godspeed!
