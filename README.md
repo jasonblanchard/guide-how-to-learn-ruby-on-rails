@@ -121,7 +121,7 @@ This has generated a few things for us:
 
 ### Migration
 
-Though the migration file has been generated, we now need to run it in order for the change to be applied.  [**Rake**](https://github.com/jimweirich/rake) is another gem that lots of Rails-related commands are run through.
+Though the migration file has been generated, we now need to apply the change.  [**Rake**](https://github.com/jimweirich/rake) is another gem that lots of Rails-related commands are run through.
 
 ```bash
 $ bin/rake db:migrate
