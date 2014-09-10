@@ -57,6 +57,8 @@ If you run into problems where you're not sure the state that your program is in
 
 Now that you have the basics down, you are ready for the main course: Rails!  [**Gems**](http://guides.rubygems.org) are reusable plugins that are published by the community, the most popular of which is Rails.  Rails itself is made up of many smaller gems.
 
+### Sample Application
+
 Let's start with a super simple classifieds site called Thinklist, where we can where we can create and view individual listings.  To get it set up, do the following:
 
 1. [Download](https://github.com/Thinkful/thinklist/archive/start.zip) and unzip the starter application code
@@ -87,48 +89,16 @@ Let's start with a super simple classifieds site called Thinklist, where we can 
 
 1. Open the application in your browser: http://localhost:3000
 
+You should now see something that looks like this:
+
+![starter app](assets/start.png)
 
 The application is fairly simple, but play around with it a bit to get a feel for it.  We are going to use this application as a starting place, and learn some Rails by adding some functionality.  Don't worry if you get lost – after each step, we will include:
 
 * A link to the code as it should appear
 * A link to the "diff" showing what changed
 
-### Boilerplate
-
-First, pick a **directory** (a.k.a. folder) where you want to put your code (you can move it later if you want).  Just as an example, let's create a `dev/` directory under our user folder:
-
-```bash
-# "make directory"
-$ mkdir ~/dev
-# "change directory", which takes us to the new folder
-# "~" refers to your home directory
-$ cd ~/dev
-```
-
-Since we already have the Rails gem [installed](#installation), the next step is to generate a **boilerplate** application called "thinklist".  Run:
-
-```bash
-$ bin/rails new thinklist
-$ cd thinklist
-$ open .
-```
-
-* [Code](https://github.com/Thinkful/thinklist/tree/boilerplate)
-* [Diff](https://github.com/Thinkful/thinklist/commit/c64b7ede55418bcf8e109a3162d35bed3ce8d633)
-
-You will now see a bunch of folders and files – this is the skeleton of your Rails app.  To fire it up, run
-
-```bash
-$ bin/rails server
-```
-
-and open http://localhost:3000/ in your browser.  You should see something like this:
-
-![boilerplate](assets/boilerplate.png)
-
-This means our **local** Rails **server** is successfully running on our computer.  Now let's look at the different pieces.
-
-Note: some other Rails tutorials introduce **scaffolding** (via [`rails generate scaffold`](http://guides.rubyonrails.org/command_line.html#rails-generate)) to automatically write starter code for you, but we are going to take the manual approach for the sake of better understanding.  You'll thank us later.
+Open up the folder in your [Sublime Text](http://www.sublimetext.com/) (or other code **editor** of choice) by dragging the folder onto the editor application icon.  You will now see a bunch of folders and files – these are the guts of your Rails app. Now let's look at the different pieces.
 
 ### Models
 
