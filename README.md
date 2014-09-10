@@ -20,7 +20,7 @@ Rails is a framework written in Ruby that helps you build web applications.  The
 
 **Ruby** is a programming language.  While there are many others (e.g. Python and Java) and they can mostly accomplish the same tasks, Ruby is a particularly readable and fun one, so you've made a good choice.  If we were building a house, Ruby would be the raw materials: plywood, nails, etc.  **Rails** is a **framework** written in (and for) Ruby – think of this as the frame for the house.  It gives you certain parameters to work within, but you have a lot of flexibility about how the final product turns out.  Just like the frame is built from the same raw materials that will be used to fill in the details of the house, Rails is written in Ruby, and you will add all of your application-specific features using Ruby (and HTML, and CSS, etc.)
 
-Through your instructions in Ruby, Rails will take information stored in a database and send HTML to be displayed to the user in a browser.  Let's get going!
+Through your instructions in Ruby, Rails will take information stored in a **database** and send **HTML** to be displayed to the user in a **browser**.  Let's get going!
 
 ## Installation
 
@@ -57,12 +57,41 @@ If you run into problems where you're not sure the state that your program is in
 
 Now that you have the basics down, you are ready for the main course: Rails!  [**Gems**](http://guides.rubygems.org) are reusable plugins that are published by the community, the most popular of which is Rails.  Rails itself is made up of many smaller gems.
 
-As an example project, let's build a super simple classifieds site, where we can create and view individual listings.  We have a completed version available [here](https://github.com/Thinkful/thinklist/), and after each step will include:
+Let's start with a super simple classifieds site called Thinklist, where we can where we can create and view individual listings.  To get it set up, do the following:
+
+1. [Download](https://github.com/Thinkful/thinklist/archive/start.zip) and unzip the starter application code
+1. Open up your terminal
+1. Navigate to the Thinklist folder (location may vary):
+
+    ```bash
+    $ cd ~/Downloads/thinklist-start
+    ```
+
+1. Install the app's dependencies using [**Bundler**](http://bundler.io):
+
+    ```bash
+    $ bundle
+    ```
+
+1. Set up the database:
+
+    ```bash
+    $ rake db:migrate
+    ```
+
+1. Start the **server**:
+
+    ```bash
+    $ bin/rails server
+    ```
+
+1. Open the application in your browser: http://localhost:3000
+
+
+The application is fairly simple, but play around with it a bit to get a feel for it.  We are going to use this application as a starting place, and learn some Rails by adding some functionality.  Don't worry if you get lost – after each step, we will include:
 
 * A link to the code as it should appear
 * A link to the "diff" showing what changed
-
-in case you get lost.
 
 ### Boilerplate
 
