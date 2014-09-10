@@ -61,7 +61,7 @@ Let's start with a super simple classifieds site called Thinklist, where we can 
 
 1. [Download](https://github.com/Thinkful/thinklist/archive/start.zip) and unzip the starter application code
 1. Open up your terminal
-1. Navigate to the Thinklist folder (location may vary):
+1. Navigate to the Thinklist **directory** (a.k.a folder) using the `cd` command (a.k.a. "change directory"), followed by the **path** (actual location may vary):
 
     ```bash
     $ cd ~/Downloads/thinklist-start
@@ -76,7 +76,7 @@ Let's start with a super simple classifieds site called Thinklist, where we can 
 1. Set up the database:
 
     ```bash
-    $ rake db:migrate
+    $ rake db:setup
     ```
 
 1. Start the **server**:
