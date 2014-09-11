@@ -102,11 +102,11 @@ The application is fairly simple, but play around with it a bit to get a feel fo
 
 Open up the folder in your [Sublime Text](http://www.sublimetext.com/) (or other code **editor** of choice) by dragging the folder onto the editor application icon.  You will now see a bunch of folders and files – these are the guts of your Rails app.  Let's get started!
 
-### Migration
+### Migrations
 
-**Models** are what deal with data in your application – they handle passing information to and from the **database**.  Think of a database as a bunch of interconnected spreadsheets, called **tables**.  Take a look at the existing structure in [`db/schema.rb`](https://github.com/Thinkful/thinklist/blob/start/db/schema.rb), and the (currently very simple) model definition in [`app/models/listing.rb`](https://github.com/Thinkful/thinklist/blob/start/app/models/listing.rb).
+In web applications, information is stored in a **database**.  Think of a database as a bunch of interconnected spreadsheets, called **tables**.  Take a look at the existing structure in [`db/schema.rb`](https://github.com/Thinkful/thinklist/blob/start/db/schema.rb).
 
-In an application using a **SQL** database (like Thinklist), each type of thing (users, products, etc.) will generally have it's own table and corresponding model.  Let's get the category structure in place.
+In an application using a **SQL** database (like Thinklist), each type of thing (users, products, etc.) will generally have it's own table.  Let's get the category structure in place.
 
 #### Generate
 
@@ -154,7 +154,9 @@ Assuming the migration was successful, you will see the changes reflected in [`d
 
 ### Models
 
-Now that we have the database structure in place, create the file for the `Category` model, where the file and class name are the singular form of the table name (`categories`).  Note that the file and class names (and everything else) are **case-sensitive**.
+**Models** are what deal with data in your application – they handle passing information to and from the database.  You can see our (currently very simple) model definition for Listings in [`app/models/listing.rb`](https://github.com/Thinkful/thinklist/blob/start/app/models/listing.rb).
+
+Now that we have the database structure in place for categories, we need to create a corresponding model.  The file and class name are the singular form of the table name (`categories`), and are **case-sensitive**.
 
 ```ruby
 # app/models/category.rb
