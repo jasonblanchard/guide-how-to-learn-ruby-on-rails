@@ -154,7 +154,35 @@ Assuming the migration was successful, you will see the changes reflected in [`d
 
 ### Models
 
-* A model for the listings – see [`app/models/listing.rb`](https://github.com/Thinkful/thinklist/blob/model/app/models/listing.rb).  Models in Rails are built on top of a gem called **ActiveRecord**, so you will notice that your `Listing` model **inherits** from [`ActiveModel::Base`](http://api.rubyonrails.org/classes/ActiveRecord/Base.html).
+Now that we have the database structure in place, create the file for the `Category` model, where the file and class name are the singular form of the table name (`categories`).  Note that the file and class names (and everything else) are **case-sensitive**.
+
+```ruby
+# app/models/category.rb
+class Category < ActiveRecord::Base
+  has_many :listings, dependent: :nullify
+end
+```
+
+Models in Rails are built on top of a gem called **ActiveRecord**, so you will notice that your `Category` model **inherits** (the `<` part) from [`ActiveModel::Base`](http://api.rubyonrails.org/classes/ActiveRecord/Base.html).  The [`has_many`](http://guides.rubyonrails.org/association_basics.html#the-has-many-association) line tells Rails that there is a relationship (a.k.a. [**association**](http://guides.rubyonrails.org/association_basics.html)) between the listings and the categories.
+
+* [Code](https://github.com/Thinkful/thinklist/tree/model)
+* [Diff](https://github.com/Thinkful/thinklist/compare/migration-run...model)
+
+Now let's set up the other half of the relation:
+
+```ruby
+# app/models/listing.rb
+class Listing < ActiveRecord::Base
+  belongs_to :category
+
+  # ...
+end
+```
+
+This tells Rails that `Listing`s can be assigned a category.  `has_many` with a `belongs_to` is called a **one-to-many relationship**, because one Category can have many Listings, but a Listing can have at most one Category.
+
+* [Code](https://github.com/Thinkful/thinklist/tree/belongs-to)
+* [Diff](https://github.com/Thinkful/thinklist/compare/model...belongs-to)
 
 ### Views
 
