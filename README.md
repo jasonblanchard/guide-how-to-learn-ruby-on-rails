@@ -93,12 +93,14 @@ You should now see something that looks like this:
 
 ![starter app](assets/start.png)
 
-The application is fairly simple, but play around with it a bit to get a feel for it.  We are going to use this application as a starting place, and learn some Rails by adding some functionality.  Don't worry if you get lost – after each step, we will include:
+### Adding On
+
+The application is fairly simple, but play around with it a bit to get a feel for it.  We are going to use this application as a starting place, and learn some Rails by adding support for categories.  Don't worry if you get lost – after each step, we will include:
 
 * A link to the code as it should appear
 * A link to the "diff" showing what changed
 
-Open up the folder in your [Sublime Text](http://www.sublimetext.com/) (or other code **editor** of choice) by dragging the folder onto the editor application icon.  You will now see a bunch of folders and files – these are the guts of your Rails app. Now let's look at the different pieces.
+Open up the folder in your [Sublime Text](http://www.sublimetext.com/) (or other code **editor** of choice) by dragging the folder onto the editor application icon.  You will now see a bunch of folders and files – these are the guts of your Rails app.  Let's get started!
 
 ### Models
 
