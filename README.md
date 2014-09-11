@@ -184,6 +184,10 @@ This tells Rails that `Listing`s can be assigned a category.  `has_many` with a 
 * [Code](https://github.com/Thinkful/thinklist/tree/belongs-to)
 * [Diff](https://github.com/Thinkful/thinklist/compare/model...belongs-to)
 
+### Console
+
+TODO
+
 ### Views
 
 **Views** are the part of Rails that generate HTML to be sent back to the browser.  In Rails, you use **ERB templates** to insert Ruby code into HTML files, so that you can generate pages depending on what record the user is viewing, whether they're logged in or not, etc.  **Helpers** are methods that can be used within your views, whether provided by Rails or written by you.
