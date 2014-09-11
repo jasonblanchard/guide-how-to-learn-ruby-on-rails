@@ -102,25 +102,44 @@ The application is fairly simple, but play around with it a bit to get a feel fo
 
 Open up the folder in your [Sublime Text](http://www.sublimetext.com/) (or other code **editor** of choice) by dragging the folder onto the editor application icon.  You will now see a bunch of folders and files – these are the guts of your Rails app.  Let's get started!
 
-### Models
+### Migration
 
-**Models** are what deal with data in your application – they handle passing data to and from the **database**.  Think of a database as a bunch of interconnected spreadsheets, called **tables**.  Each type of thing (users, products, etc.) will have it's own table and corresponding model, so let's start with creating them for Listings.
+**Models** are what deal with data in your application – they handle passing information to and from the **database**.  Think of a database as a bunch of interconnected spreadsheets, called **tables**.  Take a look at the existing structure in [`db/schema.rb`](https://github.com/Thinkful/thinklist/blob/start/db/schema.rb), and the (currently very simple) model definition in [`app/models/listing.rb`](https://github.com/Thinkful/thinklist/blob/start/app/models/listing.rb).
+
+In an application using a **SQL** database (like Thinklist), each type of thing (users, products, etc.) will generally have it's own table and corresponding model.  Let's get the category structure in place.
+
+#### Generate
+
+Use the Rails [`generate`](http://guides.rubyonrails.org/command_line.html#rails-generate) command to set up the [**migration**](http://guides.rubyonrails.org/migrations.html), which contains instructions for changes to the structure of the database.  Run:
 
 ```bash
-# generate model+table called "Listing" with a bunch of columns and corresponding types
-$ bin/rails generate model Listing title:string description:text price:decimal
+$ bin/rails generate migration CreateCategories
 ```
 
-* [Code](https://github.com/Thinkful/thinklist/tree/model)
-* [Diff](https://github.com/Thinkful/thinklist/compare/boilerplate...model)
+* [Code](https://github.com/Thinkful/thinklist/tree/migration-generate)
+* [Diff](https://github.com/Thinkful/thinklist/compare/start...migration-generate)
 
-This has generated a few things for us:
+### Change
 
-* A [**migration**](http://guides.rubyonrails.org/migrations.html), which contains instructions for changes to the structure of the database – see [`db/migrate/XXXX_create_listings.rb`](https://github.com/Thinkful/thinklist/blob/model/db/migrate/20140827203355_create_listings.rb)
-* A model for the listings – see [`app/models/listing.rb`](https://github.com/Thinkful/thinklist/blob/model/app/models/listing.rb).  Models in Rails are built on top of a gem called **ActiveRecord**, so you will notice that your `Listing` model **inherits** from [`ActiveModel::Base`](http://api.rubyonrails.org/classes/ActiveRecord/Base.html).
-* A couple of files for testing your model under `test/` (don't worry about those right now)
+Open the newly created migration file, [`db/migrate/XXXXX_create_categories.rb`](https://github.com/Thinkful/thinklist/blob/migration-generate/db/migrate/20140911040047_create_categories.rb).  Here, we will need to specify exactly what we want changed, which in this case will be adding a `categories` table, as well as a reference (a.k.a. **foreign key**) from the `listings` so they can each be assigned a category.  Add this to the file:
 
-### Migration
+```ruby
+class CreateCategories < ActiveRecord::Migration
+  def change
+    create_table :categories do |t|
+      t.string :name
+      t.timestamps
+    end
+
+    add_reference :listings, :category
+  end
+end
+```
+
+* [Code](https://github.com/Thinkful/thinklist/tree/migration-change)
+* [Diff](https://github.com/Thinkful/thinklist/compare/migration-generate...migration-change)
+
+#### Run
 
 Though the migration file has been generated, we now need to apply the change.  [**Rake**](https://github.com/jimweirich/rake) is another gem that lots of Rails-related commands are run through.
 
@@ -128,10 +147,14 @@ Though the migration file has been generated, we now need to apply the change.  
 $ bin/rake db:migrate
 ```
 
-This generates a [`db/schema.rb`](https://github.com/Thinkful/thinklist/blob/migrate/db/schema.rb) file, which describes the current structure of your database.
+Assuming the migration was successful, you will see the changes reflected in [`db/schema.rb`](https://github.com/Thinkful/thinklist/blob/migration-run/db/schema.rb).
 
-* [Code](https://github.com/Thinkful/thinklist/tree/migrate)
-* [Diff](https://github.com/Thinkful/thinklist/compare/model...migrate)
+* [Code](https://github.com/Thinkful/thinklist/tree/migration-run)
+* [Diff](https://github.com/Thinkful/thinklist/compare/migration-change...migration-run)
+
+### Models
+
+* A model for the listings – see [`app/models/listing.rb`](https://github.com/Thinkful/thinklist/blob/model/app/models/listing.rb).  Models in Rails are built on top of a gem called **ActiveRecord**, so you will notice that your `Listing` model **inherits** from [`ActiveModel::Base`](http://api.rubyonrails.org/classes/ActiveRecord/Base.html).
 
 ### Views
 
