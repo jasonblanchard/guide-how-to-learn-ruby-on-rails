@@ -165,7 +165,7 @@ class Category < ActiveRecord::Base
 end
 ```
 
-Models in Rails are built on top of a gem called **ActiveRecord**, so you will notice that your `Category` model **inherits** (the `<` part) from [`ActiveModel::Base`](http://api.rubyonrails.org/classes/ActiveRecord/Base.html).  The [`has_many`](http://guides.rubyonrails.org/association_basics.html#the-has-many-association) line tells Rails that there is a relationship (a.k.a. [**association**](http://guides.rubyonrails.org/association_basics.html)) between the listings and the categories.
+Models in Rails are built on top of a gem called [**ActiveRecord**](http://guides.rubyonrails.org/active_record_basics.html), so you will notice that your `Category` model **inherits** (the `<` part) from [`ActiveRecord::Base`](http://api.rubyonrails.org/classes/ActiveRecord/Base.html).  The [`has_many`](http://guides.rubyonrails.org/association_basics.html#the-has-many-association) line tells Rails that there is a relationship (a.k.a. [**association**](http://guides.rubyonrails.org/association_basics.html)) between the listings and the categories.
 
 * [Code](https://github.com/Thinkful/thinklist/tree/model)
 * [Diff](https://github.com/Thinkful/thinklist/compare/migration-run...model)
@@ -188,7 +188,33 @@ This tells Rails that `Listing`s can be assigned a category.  `has_many` with a 
 
 ### Console
 
-TODO
+The easiest way to understand how models work are to interact with them in the Rails **console**. The console is IRB (which we've already seen), but you are able to make calls to your Rails application code. To open it, run:
+
+```
+$ bin/rails console
+>>
+```
+
+At this new prompt, let's look at all existing Listings:
+
+```ruby
+Listing.count
+```
+
+As expected, none exist yet. Let's [create](http://guides.rubyonrails.org/active_record_basics.html#create) one:
+
+```ruby
+Listing.create(title: "Tickle Me Elmo", description: "New in box. Hardly tickled.")
+```
+
+Both `#count` and `#create` are **class methods** provided by ActiveRecord, but we can interact with individual instances as well:
+
+```ruby
+elmo = Listing.last
+elmo.title
+```
+
+When done, type `exit` and press ENTER to quit the Rails console.
 
 ### Views
 
