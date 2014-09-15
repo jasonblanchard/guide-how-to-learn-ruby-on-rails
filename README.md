@@ -195,23 +195,25 @@ $ bin/rails console
 >>
 ```
 
-At this new prompt, let's look at all existing Listings:
+At this new prompt, type the following, then press ENTER to execute the line:
 
 ```ruby
-Listing.count
+Category.count
 ```
 
 As expected, none exist yet. Let's [create](http://guides.rubyonrails.org/active_record_basics.html#create) one:
 
 ```ruby
-Listing.create(title: "Tickle Me Elmo", description: "New in box. Hardly tickled.")
+Category.create(name: "Antiques")
 ```
 
-Both `#count` and `#create` are **class methods** provided by ActiveRecord, but we can interact with individual instances as well:
+Both `#count` and `#create` are **class methods** provided by ActiveRecord, but we can interact with individual **instances**/categories as well:
 
 ```ruby
-elmo = Listing.last
-elmo.title
+Category.count
+category = Category.last
+category.name
+category.created_at
 ```
 
 When done, type `exit` and press ENTER to quit the Rails console.
