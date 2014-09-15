@@ -265,27 +265,26 @@ We now get an error, "undefined method `category_path`". That page doesn't exist
 
 ### Router
 
-When you visit a Rails website, the request comes in through the **router**, which determines the URL structure of your application. Let's add a URL to view all categories, as well as ones for viewing all listings in a particular category.
+When you visit a Rails website, the request comes in through the **router**, which determines the URL structure of your application. Let's add a URL to view all listings in a particular category.
 
 ```ruby
 # config/routes.rb
-resources :categories, only: [:index, :show]
+resources :categories, only: [:show]
 ```
 
-* [Code](https://github.com/Thinkful/thinklist/tree/routes)
-* [Diff](https://github.com/Thinkful/thinklist/compare/belongs-to...routes)
+* [Code](https://github.com/Thinkful/thinklist/tree/route)
+* [Diff](https://github.com/Thinkful/thinklist/compare/nav-link...route)
 
-To see all URLs that your application supports, use this command:
+When the page is refreshed, you will no longer get an error, because we've now told Rails the URL structure for viewing a particular category. To see all URLs that your application supports, use this command:
 
 ```
 $ bin/rake routes
       Prefix Verb   URI Pattern                  Controller#Action
          ...
-  categories GET    /categories(.:format)        categories#index
     category GET    /categories/:id(.:format)    categories#show
 ```
 
-The Rails convention is to use the `:index` route to list all of the specified "resource", and the `:show` route to display an indeividual one. Visit http://localhost:3000/categories to view the list. You will get an "uninitialized constant CategoriesController" error, because we haven't set up a **controller** to handle the request yet.
+When you click on an individual category, however, you will get an "uninitialized constant CategoriesController" error, because we haven't set up a **controller** to handle the request yet.
 
 ### Controllers
 
