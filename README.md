@@ -218,6 +218,27 @@ category.created_at
 
 Go ahead and create a few more categories. When done, type `exit` and press ENTER to quit the Rails console.
 
+### Router
+
+When you visit a Rails website, the request comes in through the **router**, which determines the URL structure of your application. Let's add a URL to view all categories, as well as ones for viewing all listings in a particular category.
+
+```ruby
+# config/routes.rb
+resources :categories, only: [:index, :show]
+```
+
+To see all URLs that your application supports, use this command:
+
+```
+$ bin/rake routes
+      Prefix Verb   URI Pattern                  Controller#Action
+         ...
+  categories GET    /categories(.:format)        categories#index
+    category GET    /categories/:id(.:format)    categories#show
+```
+
+The Rails convention is to use the `:index` route to list all of the specified "resource", and the `:show` route to display an indeividual one.
+
 ### Views
 
 **Views** are the part of Rails that generate HTML to be sent back to the browser.  In Rails, you use **ERB templates** to insert Ruby code into HTML files, so that you can generate pages depending on what record the user is viewing, whether they're logged in or not, etc.  **Helpers** are methods that can be used within your views, whether provided by Rails or written by you.
