@@ -216,15 +216,30 @@ category.name
 category.created_at
 ```
 
-When done, type `exit` and press ENTER to quit the Rails console.
+Go ahead and create a few more categories. When done, type `exit` and press ENTER to quit the Rails console.
 
 ### Views
 
 **Views** are the part of Rails that generate HTML to be sent back to the browser.  In Rails, you use **ERB templates** to insert Ruby code into HTML files, so that you can generate pages depending on what record the user is viewing, whether they're logged in or not, etc.  **Helpers** are methods that can be used within your views, whether provided by Rails or written by you.
 
+On the page that shows an individual listing, let's display the category that was assigned, if any:
+
+```erb
+<!-- app/views/listings/show.html.erb -->
+
+<p>
+  <strong>Category:</strong>
+  <% if @listing.category %>
+    <%= @listing.category.name %>
+  <% else %>
+    none
+  <% end %>
+</p>
+```
+
 ### Controllers
 
-When you visit a Rails website, the request comes in through the **router**, which determines which **controller action** to send it to.  The controller then gathers up the models it needs, and **renders** the appropriate view.
+When you visit a Rails website, the request comes in through the **router**, which determines the URL structure of your application. The router then determines which **controller action** to send it to. After the controller receives the request, it then gathers up the models it needs, and **renders** the appropriate view.
 
 ### Forms
 
