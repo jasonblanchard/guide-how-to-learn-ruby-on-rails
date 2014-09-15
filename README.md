@@ -227,6 +227,9 @@ When you visit a Rails website, the request comes in through the **router**, whi
 resources :categories, only: [:index, :show]
 ```
 
+* [Code](https://github.com/Thinkful/thinklist/tree/routes)
+* [Diff](https://github.com/Thinkful/thinklist/compare/belongs-to...routes)
+
 To see all URLs that your application supports, use this command:
 
 ```
@@ -237,7 +240,31 @@ $ bin/rake routes
     category GET    /categories/:id(.:format)    categories#show
 ```
 
-The Rails convention is to use the `:index` route to list all of the specified "resource", and the `:show` route to display an indeividual one.
+The Rails convention is to use the `:index` route to list all of the specified "resource", and the `:show` route to display an indeividual one. Visit http://localhost:3000/categories to view the list. You will get an "uninitialized constant CategoriesController" error, because we haven't set up a **controller** to handle the request yet.
+
+### Controllers
+
+The router determines which **controller action** to send the requests to. After the controller receives the request, it then gathers up the models it needs, and **renders** the appropriate view. Create a controller for categories:
+
+```ruby
+# app/controllers/categories_controller.rb
+class CategoriesController < ApplicationController
+  def index
+    @categories = Category.all
+  end
+
+  def show
+    @category = Category.find(params[:id])
+  end
+end
+```
+
+* [Code](https://github.com/Thinkful/thinklist/tree/controller)
+* [Diff](https://github.com/Thinkful/thinklist/compare/routes...controller)
+
+Similar to the [`Category` model](https://github.com/Thinkful/thinklist/blob/routes/app/models/category.rb) with `ActiveRecord::Base`, controllers in our app inherit from our [`ApplicationController`](https://github.com/Thinkful/thinklist/blob/routes/app/controllers/application_controller.rb), which in turn inherits from [`ActionController::Base`](http://api.rubyonrails.org/classes/ActionController/Base.html).
+
+Refresh http://localhost:3000/categories, and you should see a new error: "Missing template categories/index".
 
 ### Views
 
@@ -259,12 +286,6 @@ On the page that shows an individual listing, let's display the category that wa
 ```
 
 *TODO expand example*
-
-### Controllers
-
-When you visit a Rails website, the request comes in through the **router**, which determines the URL structure of your application. The router then determines which **controller action** to send it to. After the controller receives the request, it then gathers up the models it needs, and **renders** the appropriate view.
-
-*TODO add example*
 
 ### Forms
 
