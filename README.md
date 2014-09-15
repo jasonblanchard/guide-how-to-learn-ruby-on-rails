@@ -302,6 +302,21 @@ Rails templates are organized by folders corresponding to the controller, and th
 
 There are a bunch of things to point out here. Besides the normal HTML, `<% ... %>` tags execute Ruby, and `<%= ... %>` tags output the result of the **expression**. [`link_to`](http://api.rubyonrails.org/classes/ActionView/Helpers/UrlHelper.html#method-i-link_to) is a built-in helper that takes the text to display and the model to create an anchor tag to. The `table-striped` and `text-right` classes you see are there to apply styling from [Bootstrap](http://getbootstrap.com/).
 
+We will want a way to get to this page, so add a link in the navigtion bar:
+
+```erb
+<!-- app/views/layouts/application.html.erb -->
+<ul class="nav navbar-nav navbar-right">
+  <li>
+    <%= link_to 'Categories', categories_path %>
+  </li>
+  <!-- ... -->
+</ul>
+```
+
+* [Code](https://github.com/Thinkful/thinklist/tree/nav)
+* [Diff](https://github.com/Thinkful/thinklist/compare/index...nav)
+
 *TODO expand example*
 
 On the page that shows an individual listing, let's display the category that was assigned, if any:
