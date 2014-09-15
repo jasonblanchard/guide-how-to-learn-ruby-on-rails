@@ -218,6 +218,34 @@ category.created_at
 
 Go ahead and create a few more categories. When done, type `exit` and press ENTER to quit the Rails console.
 
+### Views
+
+**Views** are the part of Rails that generate HTML to be sent back to the browser... in other words, what the user will actually see. In Rails, **ERB templates** are used insert Ruby code into HTML files, so that you can generate pages depending on what record the user is viewing, whether they're logged in or not, etc.  **Helpers** are methods that can be used within your views, whether provided by Rails or written by you.
+
+We will want a way to see all of the categories, so let's add a dropdown to the navigation bar. Replace the existing "Listings" link with:
+
+```erb
+<!-- app/views/layouts/application.html.erb -->
+<li class="dropdown">
+  <a href="#" class="dropdown-toggle" data-toggle="dropdown">Categories <span class="caret"></span></a>
+  <ul class="dropdown-menu" role="menu">
+    <li>
+      <%= link_to 'All', root_path %>
+    </li>
+    <% Category.order('name ASC').each do |category| %>
+      <li>
+        <%= link_to category.name, '#' %>
+      </li>
+    <% end %>
+  </ul>
+</li>
+```
+
+* [Code](https://github.com/Thinkful/thinklist/tree/nav)
+* [Diff](https://github.com/Thinkful/thinklist/compare/belongs-to...nav)
+
+There are a bunch of things to point out here. Besides the normal HTML, `<% ... %>` tags execute Ruby, and `<%= ... %>` tags output the result of the **expression**. [`link_to`](http://api.rubyonrails.org/classes/ActionView/Helpers/UrlHelper.html#method-i-link_to) is a built-in helper that takes the text to display and the model to create an anchor tag to. The various **attributes** (`class`, `role`, etc.) on the HTML tags are there to apply styling from [Bootstrap](http://getbootstrap.com/).
+
 ### Router
 
 When you visit a Rails website, the request comes in through the **router**, which determines the URL structure of your application. Let's add a URL to view all categories, as well as ones for viewing all listings in a particular category.
@@ -266,9 +294,7 @@ Similar to the [`Category` model](https://github.com/Thinkful/thinklist/blob/rou
 
 Refresh http://localhost:3000/categories, and you should see a new error: "Missing template categories/index". `/categories` is hitting the `index` action/method, which [implicitly tries to `render`](http://guides.rubyonrails.org/layouts_and_rendering.html#rendering-by-default-convention-over-configuration-in-action) the corresponding view, which we need to create.
 
-### Views
-
-**Views** are the part of Rails that generate HTML to be sent back to the browser... in other words, what the user will actually see. In Rails, **ERB templates** are used insert Ruby code into HTML files, so that you can generate pages depending on what record the user is viewing, whether they're logged in or not, etc.  **Helpers** are methods that can be used within your views, whether provided by Rails or written by you.
+### Views Part II
 
 Rails templates are organized by folders corresponding to the controller, and the filename corresponding to the action. For `categories#index`, add:
 
@@ -299,23 +325,6 @@ Rails templates are organized by folders corresponding to the controller, and th
 
 * [Code](https://github.com/Thinkful/thinklist/tree/index)
 * [Diff](https://github.com/Thinkful/thinklist/compare/controller...index)
-
-There are a bunch of things to point out here. Besides the normal HTML, `<% ... %>` tags execute Ruby, and `<%= ... %>` tags output the result of the **expression**. [`link_to`](http://api.rubyonrails.org/classes/ActionView/Helpers/UrlHelper.html#method-i-link_to) is a built-in helper that takes the text to display and the model to create an anchor tag to. The `table-striped` and `text-right` classes you see are there to apply styling from [Bootstrap](http://getbootstrap.com/).
-
-We will want a way to get to this page, so add a link in the navigtion bar:
-
-```erb
-<!-- app/views/layouts/application.html.erb -->
-<ul class="nav navbar-nav navbar-right">
-  <li>
-    <%= link_to 'Categories', categories_path %>
-  </li>
-  <!-- ... -->
-</ul>
-```
-
-* [Code](https://github.com/Thinkful/thinklist/tree/nav)
-* [Diff](https://github.com/Thinkful/thinklist/compare/index...nav)
 
 *TODO expand example*
 
