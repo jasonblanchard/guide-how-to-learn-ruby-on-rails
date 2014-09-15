@@ -246,6 +246,23 @@ We will want a way to see all of the categories, so let's add a dropdown to the 
 
 There are a bunch of things to point out here. Besides the normal HTML, `<% ... %>` tags execute Ruby, and `<%= ... %>` tags output the result of the **expression**. [`link_to`](http://api.rubyonrails.org/classes/ActionView/Helpers/UrlHelper.html#method-i-link_to) is a built-in helper that takes the text to display and the model to create an anchor tag to. The various **attributes** (`class`, `role`, etc.) on the HTML tags are there to apply styling from [Bootstrap](http://getbootstrap.com/).
 
+You'll notice, however, after refreshing the page, all of the category links go to `#`... a.k.a. *nowhere*. Modify them to link to the category page:
+
+```erb
+<!-- app/views/layouts/application.html.erb -->
+
+<!-- before -->
+<%= link_to category.name, '#' %>
+
+<!-- after -->
+<%= link_to category.name, category %>
+```
+
+* [Code](https://github.com/Thinkful/thinklist/tree/nav-link)
+* [Diff](https://github.com/Thinkful/thinklist/compare/nav...nav-link)
+
+We now get an error, "undefined method `category_path`". That page doesn't exist yet!
+
 ### Router
 
 When you visit a Rails website, the request comes in through the **router**, which determines the URL structure of your application. Let's add a URL to view all categories, as well as ones for viewing all listings in a particular category.
