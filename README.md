@@ -39,7 +39,7 @@ It's really tough to have a conversation if you don't speak the language, so Rub
     $ ruby file.rb
     ```
 
-One convention to note: lines that start with a `$` (like above) means they are commands, intended to be run at the command line.  Lines that start with `#` are comments, just there as helpful info.
+One convention to note: lines that start with a `$` (like above) means they are commands, intended to be run at the command line.  Lines that start with `#` or are surrounded by `<!-- ... -->` are comments, just there as helpful info.
 
 Give these resources a try to learn the basics of programming in Ruby:
 
