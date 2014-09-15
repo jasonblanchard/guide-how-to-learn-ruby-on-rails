@@ -237,9 +237,13 @@ On the page that shows an individual listing, let's display the category that wa
 </p>
 ```
 
+*TODO expand example*
+
 ### Controllers
 
 When you visit a Rails website, the request comes in through the **router**, which determines the URL structure of your application. The router then determines which **controller action** to send it to. After the controller receives the request, it then gathers up the models it needs, and **renders** the appropriate view.
+
+*TODO add example*
 
 ### Forms
 
