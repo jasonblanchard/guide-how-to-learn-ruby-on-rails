@@ -270,7 +270,9 @@ def listing_params
 end
 ```
 
-Try creating another listing with a category, and it should save successfully.
+*TODO link to code+diff*
+
+This technique (and gem that handles it) is called [**strong parameters**](http://edgeguides.rubyonrails.org/action_controller_overview.html#strong-parameters). Try creating another listing with a category, and it should save successfully.
 
 ### Assets
 
