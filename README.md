@@ -293,10 +293,6 @@ The router determines which **controller action** to send the requests to. After
 ```ruby
 # app/controllers/categories_controller.rb
 class CategoriesController < ApplicationController
-  def index
-    @categories = Category.all
-  end
-
   def show
     @category = Category.find(params[:id])
   end
@@ -304,45 +300,43 @@ end
 ```
 
 * [Code](https://github.com/Thinkful/thinklist/tree/controller)
-* [Diff](https://github.com/Thinkful/thinklist/compare/routes...controller)
+* [Diff](https://github.com/Thinkful/thinklist/compare/route...controller)
 
-Similar to the [`Category` model](https://github.com/Thinkful/thinklist/blob/routes/app/models/category.rb) with `ActiveRecord::Base`, controllers in our app inherit from our [`ApplicationController`](https://github.com/Thinkful/thinklist/blob/routes/app/controllers/application_controller.rb), which in turn inherits from [`ActionController::Base`](http://api.rubyonrails.org/classes/ActionController/Base.html).
+Similar to the [`Category` model](https://github.com/Thinkful/thinklist/blob/routes/app/models/category.rb) with `ActiveRecord::Base`, controllers in our app inherit from our [`ApplicationController`](https://github.com/Thinkful/thinklist/blob/routes/app/controllers/application_controller.rb), which in turn inherits from [`ActionController::Base`](http://api.rubyonrails.org/classes/ActionController/Base.html). **Instance variables** (the ones that start with `@`) are used to pass data from the controller to the view.
 
-Refresh http://localhost:3000/categories, and you should see a new error: "Missing template categories/index". `/categories` is hitting the `index` action/method, which [implicitly tries to `render`](http://guides.rubyonrails.org/layouts_and_rendering.html#rendering-by-default-convention-over-configuration-in-action) the corresponding view, which we need to create.
+Refresh the category page, and you should see a new error: "Missing template categories/show". `/categories/ID` is hitting the `show` action/method, which [implicitly tries to `render`](http://guides.rubyonrails.org/layouts_and_rendering.html#rendering-by-default-convention-over-configuration-in-action) the corresponding view. That doesn't exist yet, so let's put in that last piece.
 
-### Views Part II
+### Partials
 
-Rails templates are organized by folders corresponding to the controller, and the filename corresponding to the action. For `categories#index`, add:
+Rails templates are organized by folders corresponding to the controller, and the filename corresponding to the action. The view for `categories#show`, for example, will live in `app/views/categories/show.html.erb`.
+
+Let's say we want to make our list of listings display the same on [the homepage](http://localhost:3000/), as well as on the individual category pages. We could copy-and-paste the code from the listings `index` page, but within an application, `copy_and_paste == 'baaaaddd'`. Instead, let's extract the code that handles rendering that part of the page, so it can be used in both places.
+
+Take everything from [`app/views/listings/index.html.erb`](https://github.com/Thinkful/thinklist/blob/controller/app/views/listings/index.html.erb) except the `<h1>...</h1>` and move it into a new file called `app/views/listings/_list.html.erb`. Template filenames that start with an underscore are known as **partials**, which are intended to be used from within other views. Once the code is in there, change all of the occurrences of `@listings` to use a local variable (`listings`) instead (i.e. remove the `@`s). This will allow that code to be more portable.
+
+Where the list code was within our existing template, have it render the new partial instead:
 
 ```erb
-<!-- app/views/categories/index.html.erb -->
-
-<h1>Categories</h1>
-
-<% if @categories.empty? %>
-  No categories to display!
-<% else %>
-  <table class="table table-striped">
-    <tbody>
-      <% @categories.each do |category| %>
-        <tr>
-          <td>
-            <%= link_to category.name, category %>
-          </td>
-          <td class="text-right">
-            <%= category.listings.count %>
-          </td>
-        </tr>
-      <% end %>
-    </tbody>
-  </table>
-<% end %>
+<!-- app/views/listings/index.html.erb -->
+<h1>Listings</h1>
+<%= render partial: 'list', locals: { listings: @listings } %>
 ```
 
-* [Code](https://github.com/Thinkful/thinklist/tree/index)
-* [Diff](https://github.com/Thinkful/thinklist/compare/controller...index)
+* [Code](https://github.com/Thinkful/thinklist/tree/partial)
+* [Diff](https://github.com/Thinkful/thinklist/compare/controller...partial)
 
-*TODO expand example*
+After verifying that [the homepage](http://localhost:3000/) still renders correctly, go ahead and add the page to view a category, which will look a lot like the `listings/index.html.erb` template above, but using the category name as the heading instead.
+
+```erb
+<!-- app/views/categories/show.html.erb -->
+<h1><%= @category.name %></h1>
+<%= render partial: 'listings/list', locals: { listings: @category.listings } %>
+```
+
+* [Code](https://github.com/Thinkful/thinklist/tree/show)
+* [Diff](https://github.com/Thinkful/thinklist/compare/partial...show)
+
+### Views Part II
 
 On the page that shows an individual listing, let's display the category that was assigned, if any:
 
