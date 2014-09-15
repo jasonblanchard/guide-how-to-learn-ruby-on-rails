@@ -264,11 +264,45 @@ end
 
 Similar to the [`Category` model](https://github.com/Thinkful/thinklist/blob/routes/app/models/category.rb) with `ActiveRecord::Base`, controllers in our app inherit from our [`ApplicationController`](https://github.com/Thinkful/thinklist/blob/routes/app/controllers/application_controller.rb), which in turn inherits from [`ActionController::Base`](http://api.rubyonrails.org/classes/ActionController/Base.html).
 
-Refresh http://localhost:3000/categories, and you should see a new error: "Missing template categories/index".
+Refresh http://localhost:3000/categories, and you should see a new error: "Missing template categories/index". `/categories` is hitting the `index` action/method, which [implicitly tries to `render`](http://guides.rubyonrails.org/layouts_and_rendering.html#rendering-by-default-convention-over-configuration-in-action) the corresponding view, which we need to create.
 
 ### Views
 
-**Views** are the part of Rails that generate HTML to be sent back to the browser.  In Rails, you use **ERB templates** to insert Ruby code into HTML files, so that you can generate pages depending on what record the user is viewing, whether they're logged in or not, etc.  **Helpers** are methods that can be used within your views, whether provided by Rails or written by you.
+**Views** are the part of Rails that generate HTML to be sent back to the browser... in other words, what the user will actually see. In Rails, **ERB templates** are used insert Ruby code into HTML files, so that you can generate pages depending on what record the user is viewing, whether they're logged in or not, etc.  **Helpers** are methods that can be used within your views, whether provided by Rails or written by you.
+
+Rails templates are organized by folders corresponding to the controller, and the filename corresponding to the action. For `categories#index`, add:
+
+```erb
+<!-- app/views/categories/index.html.erb -->
+
+<h1>Categories</h1>
+
+<% if @categories.empty? %>
+  No categories to display!
+<% else %>
+  <table class="table table-striped">
+    <tbody>
+      <% @categories.each do |category| %>
+        <tr>
+          <td>
+            <%= link_to category.name, category %>
+          </td>
+          <td class="text-right">
+            <%= category.listings.count %>
+          </td>
+        </tr>
+      <% end %>
+    </tbody>
+  </table>
+<% end %>
+```
+
+* [Code](https://github.com/Thinkful/thinklist/tree/index)
+* [Diff](https://github.com/Thinkful/thinklist/compare/controller...index)
+
+There are a bunch of things to point out here. Besides the normal HTML, `<% ... %>` tags execute Ruby, and `<%= ... %>` tags output the result of the **expression**. [`link_to`](http://api.rubyonrails.org/classes/ActionView/Helpers/UrlHelper.html#method-i-link_to) is a built-in helper that takes the text to display and the model to create an anchor tag to. The `table-striped` and `text-right` classes you see are there to apply styling from [Bootstrap](http://getbootstrap.com/).
+
+*TODO expand example*
 
 On the page that shows an individual listing, let's display the category that was assigned, if any:
 
@@ -284,8 +318,6 @@ On the page that shows an individual listing, let's display the category that wa
   <% end %>
 </p>
 ```
-
-*TODO expand example*
 
 ### Forms
 
