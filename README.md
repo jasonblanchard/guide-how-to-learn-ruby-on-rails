@@ -336,9 +336,35 @@ After verifying that [the homepage](http://localhost:3000/) still renders correc
 * [Code](https://github.com/Thinkful/thinklist/tree/show)
 * [Diff](https://github.com/Thinkful/thinklist/compare/partial...show)
 
-### Views Part II
+### Forms
 
-On the page that shows an individual listing, let's display the category that was assigned, if any:
+We want the ability to assign a category to a listing. Visit [the form](http://localhost:3000/listings/new) for creating new listings. Let's use the Rails [form helpers](http://guides.rubyonrails.org/form_helpers.html) to add a dropdown/`<select>` box to the form next to the other fields for the user to choose the category:
+
+```erb
+<!-- app/views/listings/_form.html.erb -->
+
+<div class="form-group">
+  <%= f.label :category %>
+  <%= f.collection_select :category_id, Category.all, :id, :name, { include_blank: "Please select..." }, { class: 'form-control' } %>
+</div>
+```
+
+*TODO link to code+diff*
+
+Refresh the page, and you should see the new field present. Select a category and create a new listing. Did you get an error? This is because, for [security reasons](http://weblog.rubyonrails.org/2012/3/21/strong-parameters/), Rails requires us to explicitly tell it what fields should be coming in from the form. Let's add `:category_id` to the list of accepted **parameters**:
+
+```ruby
+# bottom of app/controllers/listings_controller.rb
+def listing_params
+  params.require(:listing).permit(:title, :description, :price, :category_id)
+end
+```
+
+*TODO link to code+diff*
+
+This technique (and gem that handles it) is called [**strong parameters**](http://edgeguides.rubyonrails.org/action_controller_overview.html#strong-parameters). Try creating another listing with a category, and it should save successfully.
+
+To more easily see that the category was successfully assigned, let's display it on the listing page:
 
 ```erb
 <!-- app/views/listings/show.html.erb -->
@@ -353,34 +379,7 @@ On the page that shows an individual listing, let's display the category that wa
 </p>
 ```
 
-### Forms
-
-We want the ability to assign a category to a listing. Visit [the form](http://localhost:3000/listings/new) for creating new listings. Let's use the Rails [form helpers](http://guides.rubyonrails.org/form_helpers.html) to add a dropdown/`<select>` box to the form next to the other fields for the user to choose the category:
-
-```erb
-<!-- app/views/listings/_form.html.erb -->
-
-<div class="form-group">
-  <%= f.label :category %>
-  <%= f.collection_select :category_id, Category.all, :id, :name, { include_blank: "Please select..." }, { class: 'form-control' } %>
-</div>
-```
-
-* [Code](https://github.com/Thinkful/thinklist/tree/select)
-* [Diff](https://github.com/Thinkful/thinklist/compare/belongs-to...select)
-
-Refresh the page, and you should see the new field present. Select a category and create a new listing. Did you get an error? This is because, for [security reasons](http://weblog.rubyonrails.org/2012/3/21/strong-parameters/), Rails requires us to explicitly tell it what fields should be coming in from the form. Let's add `:category_id` to the list of accepted **parameters**:
-
-```ruby
-# bottom of app/controllers/listings_controller.rb
-def listing_params
-  params.require(:listing).permit(:title, :description, :price, :category_id)
-end
-```
-
 *TODO link to code+diff*
-
-This technique (and gem that handles it) is called [**strong parameters**](http://edgeguides.rubyonrails.org/action_controller_overview.html#strong-parameters). Try creating another listing with a category, and it should save successfully.
 
 ### Assets
 
