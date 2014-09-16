@@ -228,7 +228,11 @@ Go ahead and create a few more categories. When done, type `exit` and press ENTE
 
 **Views** are the part of Rails that generate HTML to be sent back to the browser... in other words, what the user will actually see. In Rails, **ERB templates** are used insert Ruby code into HTML files, so that you can generate pages depending on what record the user is viewing, whether they're logged in or not, etc.  **Helpers** are methods that can be used within your views, whether provided by Rails or written by you.
 
-We will want a way to see all of the categories, so let's add a dropdown to the navigation bar. Replace the existing "Listings" link with:
+We will want a way to see all of the categories, so let's add a dropdown to the navigation bar:
+
+![dropdown](assets/dropdown.png)
+
+Replace the existing "Listings" link with:
 
 ```erb
 <!-- app/views/layouts/application.html.erb -->
