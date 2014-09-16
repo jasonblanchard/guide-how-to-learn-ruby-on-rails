@@ -362,7 +362,11 @@ We want the ability to assign a category to a listing. Visit [the form](http://l
 * [Code](https://github.com/Thinkful/thinklist/tree/select)
 * [Diff](https://github.com/Thinkful/thinklist/compare/show...select)
 
-Refresh the page, and you should see the new field present. Select a category and create a new listing. Did you get an "unpermitted parameters" error? This is because, for [security reasons](http://weblog.rubyonrails.org/2012/3/21/strong-parameters/), Rails requires us to explicitly tell it what fields should be coming in from the form. Let's add `:category_id` to the list of accepted **parameters**:
+Refresh the page, and you should see the new field present.
+
+![category select box](assets/select.png)
+
+Select a category and create a new listing. Did you get an "unpermitted parameters" error? This is because, for [security reasons](http://weblog.rubyonrails.org/2012/3/21/strong-parameters/), Rails requires us to explicitly tell it what fields should be coming in from the form. Let's add `:category_id` to the list of accepted **parameters**:
 
 ```ruby
 # bottom of app/controllers/listings_controller.rb
