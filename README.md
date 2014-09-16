@@ -382,6 +382,8 @@ This technique (and gem that handles it) is called [**strong parameters**](http:
 
 To more easily see that the category was successfully assigned, let's display it on the listing page:
 
+![displaying category on listing](assets/show-category.png)
+
 ```erb
 <!-- app/views/listings/show.html.erb -->
 
