@@ -384,10 +384,6 @@ To more easily see that the category was successfully assigned, let's display it
 * [Code](https://github.com/Thinkful/thinklist/tree/show-category)
 * [Diff](https://github.com/Thinkful/thinklist/compare/params...show-category)
 
-### Assets
-
-The page may need JavaScript, CSS, images, fonts, etc. in order to load, which Rails serves through the **asset pipeline**.
-
 ### More Rails
 
 Feel like you're ready to strike out on your own?  *We didn't think so.*  There are a *lot* of pieces to understand when building web applications, and chances are it was a bit of a blur the first time the concepts were introduced.  One piece of advice (c/o [Mattan Griffel](http://www.slideshare.net/mattangriffel/how-to-teach-yourself-to-code/70)): as soon as you get through one introduction to Rails, do another one.  The Rails Tutorial will focus on some additional topics, but even where they overlap, hearing the same thing explained two different ways will make it clearer.  Also, you will feel super awesome for already knowing a lot of it.  So, go ahead, and we'll see you back here soon.
@@ -408,6 +404,7 @@ Logged-in users might be able to do certain things that logged-out users can't, 
 
 Congratulations!  You now understand all the fundamentals of building a web application in Rails.  There are many *many* options of what to learn next, and it's [turtles all the way down](http://en.wikipedia.org/wiki/Turtles_all_the_way_down).  Options include:
 
+* The asset pipeline
 * SQL
 * Front-end development
   * HTML/CSS
