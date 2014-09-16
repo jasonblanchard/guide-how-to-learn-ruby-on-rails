@@ -349,9 +349,10 @@ We want the ability to assign a category to a listing. Visit [the form](http://l
 </div>
 ```
 
-*TODO link to code+diff*
+* [Code](https://github.com/Thinkful/thinklist/tree/select)
+* [Diff](https://github.com/Thinkful/thinklist/compare/show...select)
 
-Refresh the page, and you should see the new field present. Select a category and create a new listing. Did you get an error? This is because, for [security reasons](http://weblog.rubyonrails.org/2012/3/21/strong-parameters/), Rails requires us to explicitly tell it what fields should be coming in from the form. Let's add `:category_id` to the list of accepted **parameters**:
+Refresh the page, and you should see the new field present. Select a category and create a new listing. Did you get an "unpermitted parameters" error? This is because, for [security reasons](http://weblog.rubyonrails.org/2012/3/21/strong-parameters/), Rails requires us to explicitly tell it what fields should be coming in from the form. Let's add `:category_id` to the list of accepted **parameters**:
 
 ```ruby
 # bottom of app/controllers/listings_controller.rb
@@ -360,7 +361,8 @@ def listing_params
 end
 ```
 
-*TODO link to code+diff*
+* [Code](https://github.com/Thinkful/thinklist/tree/params)
+* [Diff](https://github.com/Thinkful/thinklist/compare/select...params)
 
 This technique (and gem that handles it) is called [**strong parameters**](http://edgeguides.rubyonrails.org/action_controller_overview.html#strong-parameters). Try creating another listing with a category, and it should save successfully.
 
@@ -372,14 +374,15 @@ To more easily see that the category was successfully assigned, let's display it
 <p>
   <strong>Category:</strong>
   <% if @listing.category %>
-    <%= @listing.category.name %>
+    <%= link_to @listing.category.name, @listing.category %>
   <% else %>
     none
   <% end %>
 </p>
 ```
 
-*TODO link to code+diff*
+* [Code](https://github.com/Thinkful/thinklist/tree/show-category)
+* [Diff](https://github.com/Thinkful/thinklist/compare/params...show-category)
 
 ### Assets
 
