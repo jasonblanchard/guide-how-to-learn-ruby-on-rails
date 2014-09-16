@@ -32,7 +32,13 @@ The first rite of passage of programming is getting the necessary tools installe
 
 It's really tough to have a conversation if you don't speak the language, so Ruby is the next step on the way to building your first app.  Like most programming languages, Ruby is written in **source code** files as text, which is then run one of two ways:
 
-* Interactively through the **REPL** (Read-Evaluate-Print Loop), which in Ruby is called **IRB**
+* Interactively through the **REPL** (Read-Evaluate-Print Loop), which in Ruby is called **IRB**, i.e.
+
+    ```
+    $ irb
+    > Ruby.goes.here
+    ```
+
 * Run as **scripts**, i.e.
 
     ```bash
