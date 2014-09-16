@@ -69,7 +69,7 @@ Let's start with a super simple classifieds site called Thinklist, where we can 
     $ cd ~/Downloads/thinklist-start
     ```
 
-1. Install the app's dependencies using [**Bundler**](http://bundler.io):
+1. Install the app's **gem dependencies** – which are listed in the [`Gemfile`](https://github.com/Thinkful/thinklist/blob/start/Gemfile) – using [**Bundler**](http://bundler.io):
 
     ```bash
     $ bundle
@@ -388,11 +388,9 @@ To more easily see that the category was successfully assigned, let's display it
 
 The page may need JavaScript, CSS, images, fonts, etc. in order to load, which Rails serves through the **asset pipeline**.
 
-You will add **gem dependencies** to your app over time, which can be a pain to manage if you're adding each of them via `gem install`.  Rails uses a tool called [**Bundler**](http://bundler.io) to list the specific versions of gems that are required for an app, so installing all of them is as simple as running `bundle`.
-
 ### More Rails
 
-Feel like you're ready to strike out on your own?  We didn't think so.  There are a *lot* of pieces to understand when building web applications, and chances are it was a bit of a blur the first time the concepts were introduced.  One piece of advice (c/o [Mattan Griffel](http://www.slideshare.net/mattangriffel/how-to-teach-yourself-to-code/70)): as soon as you get through one introduction to Rails, do another one.  The Rails Tutorial will focus on some additional topics, but even where they overlap, hearing the same thing explained two different ways will make it clearer.  Also, you will feel super awesome for already knowing a lot of it.  So, go ahead, and we'll see you back here soon.
+Feel like you're ready to strike out on your own?  *We didn't think so.*  There are a *lot* of pieces to understand when building web applications, and chances are it was a bit of a blur the first time the concepts were introduced.  One piece of advice (c/o [Mattan Griffel](http://www.slideshare.net/mattangriffel/how-to-teach-yourself-to-code/70)): as soon as you get through one introduction to Rails, do another one.  The Rails Tutorial will focus on some additional topics, but even where they overlap, hearing the same thing explained two different ways will make it clearer.  Also, you will feel super awesome for already knowing a lot of it.  So, go ahead, and we'll see you back here soon.
 
 [The Rails Tutorial](http://www.railstutorial.org)
 
