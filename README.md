@@ -390,18 +390,15 @@ Feel like you're ready to strike out on your own?  *We didn't think so.*  There 
 
 [The Rails Tutorial](http://www.railstutorial.org)
 
-## Security
-
-Your Rails application will likely have users, who will need to **authenticate** to your application.  This can happen via a simple username and password, or by doing **single-sign on** via Twitter, Facebook, etc.  Most authentication with 3rd-party services work through a process called [**OAuth**](http://oauth.net), though you'll generally use [an existing library](http://marcanguera.net/awesome-ruby/#awesome-ruby-authentication) to handle this for you.
-
-Logged-in users might be able to do certain things that logged-out users can't, and an administrator might be able to see something that other users can't... this is called **authorization**.
-
 ## Going deeper
 
 Congratulations!  You now understand all the fundamentals of building a web application in Rails.  There are many *many* options of what to learn next, and it's [turtles all the way down](http://en.wikipedia.org/wiki/Turtles_all_the_way_down).  Options include:
 
 * The asset pipeline
 * [Deployment to Heroku](https://devcenter.heroku.com/articles/getting-started-with-rails4)
+* Authentication/authorization
+  * Usernames + passwords
+  * Single sign-on / OAuth
 * SQL
 * Front-end development
   * HTML/CSS
