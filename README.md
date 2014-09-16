@@ -390,10 +390,6 @@ Feel like you're ready to strike out on your own?  *We didn't think so.*  There 
 
 [The Rails Tutorial](http://www.railstutorial.org)
 
-## Deployment
-
-Now that you've been led through building a basic Rails application, it's time to get it up in front of people.  When building an application, you will generally run it on your local machine, but for others to access the app, you need to **deploy** to a **server**.  The easiest and most popular option for hosting (new) Rails applications is [Heroku](https://www.heroku.com).  With some other providers, you need to set up the server, database, and other parts of the system, but with Heroku it can be as simple as running a few commands.  Follow [this guide](https://devcenter.heroku.com/articles/getting-started-with-rails4) to get your app live.
-
 ## Security
 
 Your Rails application will likely have users, who will need to **authenticate** to your application.  This can happen via a simple username and password, or by doing **single-sign on** via Twitter, Facebook, etc.  Most authentication with 3rd-party services work through a process called [**OAuth**](http://oauth.net), though you'll generally use [an existing library](http://marcanguera.net/awesome-ruby/#awesome-ruby-authentication) to handle this for you.
@@ -405,6 +401,7 @@ Logged-in users might be able to do certain things that logged-out users can't, 
 Congratulations!  You now understand all the fundamentals of building a web application in Rails.  There are many *many* options of what to learn next, and it's [turtles all the way down](http://en.wikipedia.org/wiki/Turtles_all_the_way_down).  Options include:
 
 * The asset pipeline
+* [Deployment to Heroku](https://devcenter.heroku.com/articles/getting-started-with-rails4)
 * SQL
 * Front-end development
   * HTML/CSS
