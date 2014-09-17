@@ -245,7 +245,11 @@ Go ahead and create a few more categories. When done, type `exit` and press ENTE
 
 **Views** are the part of Rails that generate HTML to be sent back to the browser... in other words, what the user will actually see. In Rails, **ERB templates** are used insert Ruby code into HTML files, so that you can generate pages depending on what record the user is viewing, whether they're logged in or not, etc. **Helpers** are methods that can be used within your views, whether provided by Rails or written by you.
 
-We will want a way to see all of the categories, so let's add a dropdown to the navigation bar. Replace the existing "Listings" link with:
+We will want a way to see all of the categories, so let's add a dropdown to the navigation bar:
+
+![dropdown](assets/dropdown.png)
+
+Replace the existing "Listings" link with:
 
 ```erb
 <!-- app/views/layouts/application.html.erb -->
@@ -375,7 +379,11 @@ We want the ability to assign a category to a listing. Visit [the form](http://l
 * [Code](https://github.com/Thinkful/thinklist/tree/select)
 * [Diff](https://github.com/Thinkful/thinklist/compare/show...select)
 
-Refresh the page, and you should see the new field present. Select a category and create a new listing. Did you get an "unpermitted parameters" error? This is because, for [security reasons](http://weblog.rubyonrails.org/2012/3/21/strong-parameters/), Rails requires us to explicitly tell it what fields should be coming in from the form. Let's add `:category_id` to the list of accepted **parameters**:
+Refresh the page, and you should see the new field present.
+
+![category select box](assets/select.png)
+
+Select a category and create a new listing. Did you get an "unpermitted parameters" error? This is because, for [security reasons](http://weblog.rubyonrails.org/2012/3/21/strong-parameters/), Rails requires us to explicitly tell it what fields should be coming in from the form. Let's add `:category_id` to the list of accepted **parameters**:
 
 ```ruby
 # bottom of app/controllers/listings_controller.rb
@@ -390,6 +398,8 @@ end
 This technique (and gem that handles it) is called [**strong parameters**](http://edgeguides.rubyonrails.org/action_controller_overview.html#strong-parameters). Try creating another listing with a category, and it should save successfully.
 
 To more easily see that the category was successfully assigned, let's display it on the listing page:
+
+![displaying category on listing](assets/show-category.png)
 
 ```erb
 <!-- app/views/listings/show.html.erb -->
