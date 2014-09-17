@@ -2,7 +2,24 @@
 
 ## Welcome
 
-People come into learning Rails for all sorts of reasons. Whether you have been programming for years and want to give development in Ruby a try, or you are a complete coding newbie wanting to see if programming is for you, Rails is a great tool to learn. Most of the resources in this guide assume no programming knowledge, so more advanced readers may choose to skim the introductory sections of each to learn the particulars of Ruby and Rails.
+Welcome to Thinkful's guide for learning Rails! People start learning Rails for all sorts of reasons. Whether you have been programming for years and want to give web development in Ruby a try, or you are a complete coding newbie wanting to see if programming is for you, Rails is a great tool to learn. Most of the resources in this guide assume no programming knowledge, so more advanced readers may choose to skim the introductory sections of each to learn the particulars of Ruby and Rails.
+
+In this guide, we are going to cover:
+
+1. [The Rails landscape](#introduction)
+1. [Installation of the necessary tools](#installation)
+1. [What is Ruby](#ruby)
+1. [Changing the structure of your database](#migrations)
+1. [Interacting with your application from the command line](#console)
+1. [Making souped-up HTML](#views)
+1. [Adding URLs](#router)
+1. [Handling requests](#controllers)
+1. [Making reusable chunks of display code](#partials)
+1. [Building forms](#forms)
+1. [Incorporating HTML, CSS and JavaScript](#assets)
+1. [Getting your app on the interwebs](#deployment)
+1. [Preventing trespassers](#security)
+1. [Where to go next](#going-deeper)
 
 Before getting started, you should **pick a goal**. These tutorials will walk you though creating sample applications, but the real test is when you apply the concepts to something unique. This could be a personal blog, or a site for your dog walking business... whatever! "Building a better Facebook" is probably a bit ambitious for a first project – keep it simple. Having a real problem to solve in the back of your mind will help keep you motivated, and allow you to ask yourself "how would this apply to my project?" as you cover each concept.
 
@@ -125,7 +142,7 @@ $ bin/rails generate migration CreateCategories
 * [Code](https://github.com/Thinkful/thinklist/tree/migration-generate)
 * [Diff](https://github.com/Thinkful/thinklist/compare/start...migration-generate)
 
-### Change
+#### Change
 
 Open the newly created migration file, [`db/migrate/XXXXX_create_categories.rb`](https://github.com/Thinkful/thinklist/blob/migration-generate/db/migrate/20140911040047_create_categories.rb). Here, we will need to specify exactly what we want changed, which in this case will be adding a `categories` table, as well as a reference (a.k.a. **foreign key**) from the `listings` so they can each be assigned a category. Add this to the file:
 
