@@ -188,7 +188,11 @@ class Category < ActiveRecord::Base
 end
 ```
 
-Models in Rails are built on top of a gem called [**ActiveRecord**](http://guides.rubyonrails.org/active_record_basics.html), so you will notice that your `Category` model **inherits** (the `<` part) from [`ActiveRecord::Base`](http://api.rubyonrails.org/classes/ActiveRecord/Base.html). The [`has_many`](http://guides.rubyonrails.org/association_basics.html#the-has-many-association) line tells Rails that there is a relationship (a.k.a. [**association**](http://guides.rubyonrails.org/association_basics.html)) between the listings and the categories.
+Confused about where to add your code? The first commented line in each code block indicates which file you should be working in.  If you're still confused about where you should be adding code within the file, check out the "diff" link included below each block. Remember - the "code" link will show you the code as it should appear at that point, and the "diff" shows what was changed from the previous step.
+
+**Pro tip:** to create a new blank file from the command line, use ```touch``` plus the filename. So, if you're working from ```thinklist-start```, you could use ```touch app/models/category.rb``` to create a new ```category.rb``` file.
+
+Models in Rails are built on top of a gem called [**ActiveRecord**](http://guides.rubyonrails.org/active_record_basics.html), so you will notice that your `Category` model **inherits** (the `<` part) from [`ActiveRecord::Base`](http://api.rubyonrails.org/classes/ActiveRecord/Base.html). The [`has_many`](http://guides.rubyonrails.org/association_basics.html#the-has-many-association) line tells Rails that there is a relationship (a.k.a. [**association**](http://guides.rubyonrails.org/association_basics.html)) between the listings and the categories. Don't worry about ```dependent: :nullify``` for now; it just tells your app how to deal with a record when its owner is deleted (in this case, the ```Category```).
 
 * [Code](https://github.com/Thinkful/thinklist/tree/model)
 * [Diff](https://github.com/Thinkful/thinklist/compare/migration-run...model)
@@ -329,9 +333,9 @@ end
 * [Code](https://github.com/Thinkful/thinklist/tree/controller)
 * [Diff](https://github.com/Thinkful/thinklist/compare/route...controller)
 
-Similar to the [`Category` model](https://github.com/Thinkful/thinklist/blob/routes/app/models/category.rb) with `ActiveRecord::Base`, controllers in our app inherit from our [`ApplicationController`](https://github.com/Thinkful/thinklist/blob/routes/app/controllers/application_controller.rb), which in turn inherits from [`ActionController::Base`](http://api.rubyonrails.org/classes/ActionController/Base.html). **Instance variables** (the ones that start with `@`) are used to pass data from the controller to the view.
+Similar to the [`Category` model](https://github.com/Thinkful/thinklist/blob/controller/app/models/category.rb)  with `ActiveRecord::Base`, controllers in our app inherit from our [`ApplicationController`](https://github.com/Thinkful/thinklist/blob/start/app/controllers/application_controller.rb), which in turn inherits from [`ActionController::Base`](http://api.rubyonrails.org/classes/ActionController/Base.html). **Instance variables** (the ones that start with `@`) are used to pass data from the controller to the view.
 
-Refresh the category page, and you should see a new error: "Missing template categories/show". `/categories/ID` is hitting the `show` action/method, which [implicitly tries to `render`](http://guides.rubyonrails.org/layouts_and_rendering.html#rendering-by-default-convention-over-configuration-in-action) the corresponding view. That doesn't exist yet, so let's put in that last piece.
+Refresh the category page, and you should see a new error: "Missing template categories/show". `/categories/ID` is hitting the `show` action/method, which [implicitly tries to `render`](http://guides.rubyonrails.org/layouts_and_rendering.html#rendering-by-default-convention-over-configuration-in-action) the corresponding view (notice that when we ran ```bin/rake routes``` previously, ```/categories/:id(.:format)``` corresponded to ```categories#show``` - that's the template it's looking for!). That doesn't exist yet, so let's put in that last piece.
 
 ### Partials
 
