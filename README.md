@@ -147,6 +147,7 @@ $ bin/rails generate migration CreateCategories
 Open the newly created migration file, [`db/migrate/XXXXX_create_categories.rb`](https://github.com/Thinkful/thinklist/blob/migration-generate/db/migrate/20140911040047_create_categories.rb). Here, we will need to specify exactly what we want changed, which in this case will be adding a `categories` table, as well as a reference (a.k.a. **foreign key**) from the `listings` so they can each be assigned a category. Add this to the file:
 
 ```ruby
+# db/migrate/XXXXX_create_categories.rb
 class CreateCategories < ActiveRecord::Migration
   def change
     create_table :categories do |t|
@@ -161,6 +162,8 @@ end
 
 * [Code](https://github.com/Thinkful/thinklist/tree/migration-change)
 * [Diff](https://github.com/Thinkful/thinklist/compare/migration-generate...migration-change)
+
+*Confused about where to add your code? The first commented line in each code block indicates which file you should be working in, which might not exist yet. If you're still confused about where you should be adding code within the file, check out the "diff" link included below each block. Remember - the "code" link will show you the code as it should appear at that point, and the "diff" shows what was changed from the previous step.*
 
 #### Run
 
@@ -188,12 +191,10 @@ class Category < ActiveRecord::Base
 end
 ```
 
-Confused about where to add your code? The first commented line in each code block indicates which file you should be working in, which might not exist yet. If you're still confused about where you should be adding code within the file, check out the "diff" link included below each block. Remember - the "code" link will show you the code as it should appear at that point, and the "diff" shows what was changed from the previous step.
-
-Models in Rails are built on top of a gem called [**ActiveRecord**](http://guides.rubyonrails.org/active_record_basics.html), so you will notice that your `Category` model **inherits** (the `<` part) from [`ActiveRecord::Base`](http://api.rubyonrails.org/classes/ActiveRecord/Base.html). The [`has_many`](http://guides.rubyonrails.org/association_basics.html#the-has-many-association) line tells Rails that there is a relationship (a.k.a. [**association**](http://guides.rubyonrails.org/association_basics.html)) between the listings and the categories. Don't worry about ```dependent: :nullify``` for now; it just tells your app how to deal with a record when its owner is deleted (in this case, the ```Category```).
-
 * [Code](https://github.com/Thinkful/thinklist/tree/model)
 * [Diff](https://github.com/Thinkful/thinklist/compare/migration-run...model)
+
+Models in Rails are built on top of a gem called [**ActiveRecord**](http://guides.rubyonrails.org/active_record_basics.html), so you will notice that your `Category` model **inherits** (the `<` part) from [`ActiveRecord::Base`](http://api.rubyonrails.org/classes/ActiveRecord/Base.html). The [`has_many`](http://guides.rubyonrails.org/association_basics.html#the-has-many-association) line tells Rails that there is a relationship (a.k.a. [**association**](http://guides.rubyonrails.org/association_basics.html)) between the listings and the categories. Don't worry about ```dependent: :nullify``` for now; it just tells your app how to deal with a record when its owner is deleted (in this case, the ```Category```).
 
 Now let's set up the other half of the relation:
 
@@ -206,10 +207,10 @@ class Listing < ActiveRecord::Base
 end
 ```
 
-This tells Rails that `Listing`s can be assigned a category. `has_many` with a `belongs_to` is called a **one-to-many relationship**, because one Category can have many Listings, but a Listing can have at most one Category.
-
 * [Code](https://github.com/Thinkful/thinklist/tree/belongs-to)
 * [Diff](https://github.com/Thinkful/thinklist/compare/model...belongs-to)
+
+This tells Rails that `Listing`s can be assigned a category. `has_many` with a `belongs_to` is called a **one-to-many relationship**, because one Category can have many Listings, but a Listing can have at most one Category.
 
 ### Console
 
