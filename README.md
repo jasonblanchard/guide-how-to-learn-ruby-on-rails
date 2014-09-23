@@ -276,6 +276,8 @@ Replace the existing "Listings" link with:
 
 There are a bunch of things to point out here. Besides the normal HTML, `<% ... %>` tags execute Ruby, and `<%= ... %>` tags output the result of the **expression**. [`link_to`](http://api.rubyonrails.org/classes/ActionView/Helpers/UrlHelper.html#method-i-link_to) is a built-in helper that takes the text to display and the model to create an anchor tag to. The various **attributes** (`class`, `role`, etc.) on the HTML tags are there to apply styling from [Bootstrap](http://getbootstrap.com/).
 
+Bootstrap is a framework that can be used with any site to make styling pages easier – basically to give minimal, good-looking defaults for buttons, navigation, that work well on a range of browsers and screen sizes. For new projects, you can learn how to set it up [here](https://www.railstutorial.org/book/filling_in_the_layout).
+
 You'll notice, however, after refreshing the page, all of the category links go to `#`... a.k.a. *nowhere*. Modify them to link to the category page:
 
 ```erb
