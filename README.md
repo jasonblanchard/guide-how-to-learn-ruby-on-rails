@@ -430,21 +430,36 @@ Feel like you're ready to strike out on your own? *We didn't think so.*  There a
 
 Congratulations! You now understand all the fundamentals of building a web application in Rails. There are many *many* options of what to learn next, and it's [turtles all the way down](http://en.wikipedia.org/wiki/Turtles_all_the_way_down). Options include:
 
-* The asset pipeline
+* [The asset pipeline](http://guides.rubyonrails.org/asset_pipeline.html)
 * [Deployment to Heroku](https://devcenter.heroku.com/articles/getting-started-with-rails4)
 * Authentication/authorization
   * Usernames + passwords
   * Single sign-on / OAuth
 * SQL
+  * [Learn SQL The Hard Way](http://sql.learncodethehardway.org/)
 * Front-end development
   * HTML/CSS
-  * JavaScript (fundamentals, or a framework)
+    * [*resources*](http://teachyourselftocode.com/html-css)
+  * JavaScript
+    * Fundamentals
+      * [*resources*](http://teachyourselftocode.com/javascript)
+    * A framework, e.g.
+      * [Angular.js](https://angularjs.org/)
+      * [Backbone.js](http://backbonejs.org/)
+      * [Ember.js](http://emberjs.com/)
 * More practice of programming fundamentals (algorithms, design patterns, etc.)
 * Deeper understanding of Ruby
+  * [*resources*](http://teachyourselftocode.com/ruby)
 * Deeper understanding of Rails – see:
   * [Rails for Zombies](http://railsforzombies.org)
   * [Agile Web Development with Rails 4](http://pragprog.com/book/rails4/agile-web-development-with-rails-4)
   * [The Rails 4 Way](https://leanpub.com/tr4w)
+  * [*more*](http://teachyourselftocode.com/rails)
 * Working with APIs
+  * [Codecademy](http://www.codecademy.com/learn#apis)
+* Automated testing
+  * [Code School](https://www.codeschool.com/courses/testing-with-rspec)
+  * [*Everyday Rails Testing with RSpec*](https://leanpub.com/everydayrailsrspec)
+  * [Upcase](https://upcase.com/test-driven-rails)
 
 There isn't a right (or wrong) choice, because their relative value will depend on your short and long-term goals. Godspeed!
