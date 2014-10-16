@@ -1,8 +1,16 @@
 # How to Learn Ruby on Rails
 
+## Intro
+Title: Learn Ruby on Rails as you modify a Craiglist clone
+SubTitle: Gain a solid understanding of core Ruby on Rails concepts
+
+In this interactive tutorial you're going to learn Ruby and Ruby on Rails fundamentals by modifying a Craigslist clone. You can view the source code on [GitHub](https://github.com/Thinkful/guide-how-to-learn-ruby-on-rails) where you'll find a [sample app to follow along](https://github.com/Thinkful/thinklist).
+
+This guide was written by [Aidan Feldman](https://twitter.com/aidanfeldman).
+
 ## Welcome
 
-Welcome to Thinkful's guide for learning Rails! People start learning Rails for all sorts of reasons. Whether you have been programming for years and want to give web development in Ruby a try, or you are a complete coding newbie wanting to see if programming is for you, Rails is a great tool to learn. Most of the resources in this guide assume no programming knowledge, so more advanced readers may choose to skim the introductory sections of each to learn the particulars of Ruby and Rails.
+People start learning Rails for all sorts of reasons. Whether you have been programming for years and want to give web development in Ruby a try, or you are a complete coding newbie wanting to see if programming is for you, Rails is a great tool to learn. Most of the resources in this guide assume no programming knowledge — more advanced readers may choose to skim the introductory sections of each to learn the particulars of Ruby and Rails.
 
 In this guide, we are going to cover:
 
@@ -21,7 +29,7 @@ In this guide, we are going to cover:
 1. [Preventing trespassers](#security)
 1. [Where to go next](#going-deeper)
 
-Before getting started, you should **pick a goal**. These tutorials will walk you though creating sample applications, but the real test is when you apply the concepts to something unique. This could be a personal blog, or a site for your dog walking business... whatever! "Building a better Facebook" is probably a bit ambitious for a first project – keep it simple. Having a real problem to solve in the back of your mind will help keep you motivated, and allow you to ask yourself "how would this apply to my project?" as you cover each concept.
+Before getting started, you should **pick a goal**. This tutorial will walk you though modifying a sample application, but the real test is when you apply these concepts to something unique. This could be a personal blog, or a site for your dog walking business... whatever! "Building a better Facebook" is probably a bit ambitious for a first project – keep it simple. Having a real problem to solve in the back of your mind will help keep you motivated, and allow you to ask yourself "how would this apply to my project?" as you cover each concept.
 
 ### For beginners
 
@@ -82,7 +90,7 @@ Now that you have the basics down, you are ready for the main course: Rails! [**
 
 ### Sample Application
 
-Let's start with a super simple classifieds site called Thinklist, where we can where we can create and view individual listings. To get it set up, do the following:
+Let's start with a super simple classifieds site called Thinklist (a Craigslist clone), where we can where we can create and view individual listings. To get it set up, do the following:
 
 1. [Download](https://github.com/Thinkful/thinklist/archive/start.zip) and unzip the starter application code
 1. Open up your terminal
