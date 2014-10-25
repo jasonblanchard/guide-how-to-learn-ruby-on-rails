@@ -37,7 +37,7 @@ It's [been said](http://en.wikipedia.org/wiki/Outliers_(book)) that it takes 10,
 
 > Give someone a program, you frustrate them for a day; teach them how to program, you frustrate them for a lifetime.
 
-Don't be discouraged if it isn't making sense. There are [*tons* of resources](http://hackerhours.org/resources.html), online and in-person, that can help you get unstuck. Feel free [ask your question in a GitHub issue](https://github.com/Thinkful/guide-how-to-learn-ruby-on-rails/issues/new), too.
+Don't be discouraged if it isn't making sense. There are [*tons* of resources](http://hackerhours.org/resources.html), online and in-person, that can help you get unstuck. Google and [Stack Overflow](http://stackoverflow.com/tour) are your friends. Feel free [ask your question in a GitHub issue](https://github.com/Thinkful/guide-how-to-learn-ruby-on-rails/issues/new), too.
 
 ## Introduction
 
