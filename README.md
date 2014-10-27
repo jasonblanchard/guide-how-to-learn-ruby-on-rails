@@ -352,7 +352,7 @@ Rails templates are organized by folders corresponding to the controller, and th
 
 Let's say we want to make our list of listings display the same on [the homepage](http://localhost:3000/), as well as on the individual category pages. We could copy-and-paste the code from the listings `index` page, but within an application, `copy_and_paste == 'baaaaddd'`. Instead, let's extract the code that handles rendering that part of the page, so it can be used in both places.
 
-Take everything from [`app/views/listings/index.html.erb`](https://github.com/Thinkful/thinklist/blob/controller/app/views/listings/index.html.erb) except the `<h1>...</h1>` and move it into a new file called `app/views/listings/_list.html.erb`. Template filenames that start with an underscore are known as **partials**, which are intended to be used from within other views. Once the code is in there, change all of the occurrences of `@listings` to use a local variable (`listings`) instead (i.e. remove the `@`s). This will allow that code to be more portable.
+Take everything from [`app/views/listings/index.html.erb`](https://github.com/Thinkful/thinklist/blob/controller/app/views/listings/index.html.erb) except the ```<h1>...</h1>``` and move it into a new file called `app/views/listings/_list.html.erb`. Template filenames that start with an underscore are known as **partials**, which are intended to be used from within other views. Once the code is in there, change all of the occurrences of `@listings` to use a local variable (`listings`) instead (i.e. remove the `@`s). This will allow that code to be more portable.
 
 Where the list code was within our existing template, have it render the new partial instead:
 
